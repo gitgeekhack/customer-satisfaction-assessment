@@ -11,6 +11,6 @@ print(data.shape)  # shape of our data
 print(data.isnull().sum())  # checking for null value
 data.dropna(inplace=True)  # dropping null values
 
-sorted_df = data.sort_values(by='created_at', ascending=True)  # sort whole dataframe
-sorted_df.sort_index()  # sort_index of dataframe
+sorted_df = data.sort_values(by=['thread_id', 'created_at'], ascending=[True, True])  # sort whole dataframe
+sorted_df.reset_index()  # reset_index of dataframe
 sorted_df.to_csv('transformed_conversation.csv')  # saving in csv file
