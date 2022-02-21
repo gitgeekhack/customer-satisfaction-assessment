@@ -2,8 +2,9 @@ import json
 import pandas as pd
 from bs4 import BeautifulSoup  # for removing html contents
 
+
 def extract_data():
-    with open('0e4dc114998a4ecabf64a1b7aaf07e01.json') as file:
+    with open('8b8c697f82ce40e4a04138383676ef5a.json') as file:
         data = json.load(file)  # load file data into data var
 
     extracted_list = []  # contains extracted attributes
@@ -35,7 +36,6 @@ def extract_data():
 
 
 def transform_data(data_frame):
-
     # data_frame = data.iloc[:, 1:]  # remove index first column
     # print(data_frame.head())  # print first five rows
 
@@ -80,9 +80,8 @@ def transform_data(data_frame):
     sorted_df.to_csv('transformed_data.csv', index=False)
     return sorted_df
 
+
 # Driver Code
 
 df = extract_data()
 cleaned_df = transform_data(df)
-
-

@@ -1,0 +1,421 @@
+thread_id,created_at,created_by,message,lemma_spacy_message,tokenized,lemma_nltk_message,rm_stopwords
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:12:56.844000+00:00,Bot,"hi, i am srijan chat bot. welcome to srijan.",hi I be srijan chat bot welcome to srijan,"['hi', 'i', 'am', 'srijan', 'chat', 'bot.', 'welcome', 'to', 'srijan.']","hi, i am srijan chat bot. welcome to srijan.",hi srijan chat bot. welcome srijan.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:12:56.845000+00:00,Bot,what can i help you with today?,what can I help you with today,"['what', 'can', 'i', 'help', 'you', 'with', 'today']",what can i help you with today?,help today
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:13.712000+00:00,Customer,property requirement,property requirement,"['property', 'requirement']",property requirement,property requirement
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:13.874000+00:00,Bot,"sure. i will assist you in shortlisting the properties of your choice based on a few questions.
+
+i'd like to get to know you first.","sure I will assist you in shortlist the property of your choice base on a few question 
+
+ I would like to get to know you first","['sure.', 'i', 'will', 'assist', 'you', 'in', 'shortlisting', 'the', 'properties', 'of', 'your', 'choice', 'based', 'on', 'a', 'few', 'questions.', 'i', 'd', 'like', 'to', 'get', 'to', 'know', 'you', 'first.']","sure. i will assist you in shortlisting the properties of your choice based on a few questions.
+
+i'd like to get to know you first.",sure. assist shortlisting properties choice based questions. like get know first.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:13.875000+00:00,Bot,let's start with your name.,let us start with your name,"['let', 's', 'start', 'with', 'your', 'name.']",let's start with your name.,let start name.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:30.688000+00:00,Customer,richa deb,richa deb,"['richa', 'deb']",richa deb,richa deb
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:30.953000+00:00,Bot,"that's a lovely name, deb!",that be a lovely name deb,"['that', 's', 'a', 'lovely', 'name', 'deb']","that's a lovely name, deb!",lovely name deb
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:30.954000+00:00,Bot,a phone number we can contact you on?.,a phone number we can contact you on,"['a', 'phone', 'number', 'we', 'can', 'contact', 'you', 'on', '.']",a phone number we can contact you on?.,phone number contact .
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:47.643000+00:00,Customer,9.20E+11,9.20E+11,['+919593526602'],9.20E+11,9.20E+11
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:49.416000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:56.922000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:13:57.141000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:01.696000+00:00,Customer,2 bhk,2 bhk,"['2', 'bhk']",2 bhk,2 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:01.943000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:07.162000+00:00,Customer,3 bhk,3 bhk,"['3', 'bhk']",3 bhk,3 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:07.568000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:15.801000+00:00,Customer,north kolkata,north kolkata,"['north', 'kolkata']",north kolkata,north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:16.078000+00:00,Bot,we have the following properties within north kolkata,we have the follow property within north kolkata,"['we', 'have', 'the', 'following', 'properties', 'within', 'north', 'kolkata']",we have the following properties within north kolkata,following properties within north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:30.846000+00:00,Customer,eternis on jessore road,eterni on jessore road,"['eternis', 'on', 'jessore', 'road']",eternis on jessore road,eternis jessore road
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:31.245000+00:00,Bot,"eternis is located on jessore road, doltala more, north kolkata.
+
+the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.","eternis be locate on jessore road doltala more north kolkata 
+
+ the project house 2/3/4bhk apartment and spread over 345 cottah of land area","['eternis', 'is', 'located', 'on', 'jessore', 'road', 'doltala', 'more', 'north', 'kolkata.', 'the', 'project', 'houses', '2', '3', '4bhk', 'apartments', 'and', 'spreads', 'over', '345', 'cottahs', 'of', 'land', 'area.']","eternis is located on jessore road, doltala more, north kolkata.
+
+the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.",eternis located jessore road doltala north kolkata. project houses 2 3 4bhk apartments spreads 345 cottahs land area.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:31.246000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:49.421000+00:00,Customer,go back to main menu,go back to main menu,"['go', 'back', 'to', 'main', 'menu']",go back to main menu,go back main menu
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:49.576000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:53.044000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:53.270000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:56.129000+00:00,Customer,2 bhk,2 bhk,"['2', 'bhk']",2 bhk,2 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:56.338000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:59.301000+00:00,Customer,north kolkata,north kolkata,"['north', 'kolkata']",north kolkata,north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:14:59.483000+00:00,Bot,we have the following properties within north kolkata,we have the follow property within north kolkata,"['we', 'have', 'the', 'following', 'properties', 'within', 'north', 'kolkata']",we have the following properties within north kolkata,following properties within north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:03.491000+00:00,Customer,eternis,eterni,['eternis'],eternis,eternis
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:03.839000+00:00,Bot,"we have eternis on jessore road.
+
+eternis is located on jessore road, doltala more, north kolkata. the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.","we have eterni on jessore road 
+
+ eterni be locate on jessore road doltala more north kolkata the project house 2/3/4bhk apartment and spread over 345 cottah of land area","['we', 'have', 'eternis', 'on', 'jessore', 'road.', 'eternis', 'is', 'located', 'on', 'jessore', 'road', 'doltala', 'more', 'north', 'kolkata.', 'the', 'project', 'houses', '2', '3', '4bhk', 'apartments', 'and', 'spreads', 'over', '345', 'cottahs', 'of', 'land', 'area.']","we have eternis on jessore road.
+
+eternis is located on jessore road, doltala more, north kolkata. the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.",eternis jessore road. eternis located jessore road doltala north kolkata. project houses 2 3 4bhk apartments spreads 345 cottahs land area.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:03.840000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:12.122000+00:00,Customer,location,location,['location'],location,location
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:12.277000+00:00,Bot,"eternis is on jessore road, doltala more with the best locations just minutes away. our property is one of the most impressive ones in this area.
+
+● just 3 km from new barrackpur railway station
+● just 6 km distance from dumdum airport
+● just 1.2 km from madhyamgram chowmatha
+● 13.5 km from dumdum metro station
+● 900 m from upcoming new barrakpore metro station","eterni be on jessore road doltala more with the good location just minute away our property be one of the most impressive one in this area 
+
+ ● just 3 km from new barrackpur railway station 
+ ● just 6 km distance from dumdum airport 
+ ● just 1.2 km from madhyamgram chowmatha 
+ ● 13.5 km from dumdum metro station 
+ ● 900 m from upcoming new barrakpore metro station","['eternis', 'is', 'on', 'jessore', 'road', 'doltala', 'more', 'with', 'the', 'best', 'locations', 'just', 'minutes', 'away.', 'our', 'property', 'is', 'one', 'of', 'the', 'most', 'impressive', 'ones', 'in', 'this', 'area.', 'just', '3', 'km', 'from', 'new', 'barrackpur', 'railway', 'station', 'just', '6', 'km', 'distance', 'from', 'dumdum', 'airport', 'just', '1.2', 'km', 'from', 'madhyamgram', 'chowmatha', '13.5', 'km', 'from', 'dumdum', 'metro', 'station', '900', 'm', 'from', 'upcoming', 'new', 'barrakpore', 'metro', 'station']","eternis is on jessore road, doltala more with the best locations just minutes away. our property is one of the most impressive ones in this area.
+
+● just 3 km from new barrackpur railway station
+● just 6 km distance from dumdum airport
+● just 1.2 km from madhyamgram chowmatha
+● 13.5 km from dumdum metro station
+● 900 m from upcoming new barrakpore metro station",eternis jessore road doltala best locations minutes away. property one impressive ones area. 3 km new barrackpur railway station 6 km distance dumdum airport 1.2 km madhyamgram chowmatha 13.5 km dumdum metro station 900 upcoming new barrakpore metro station
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:12.278000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:43.494000+00:00,Customer,go back to main menu,go back to main menu,"['go', 'back', 'to', 'main', 'menu']",go back to main menu,go back main menu
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:43.740000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:48.071000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:48.376000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:52.441000+00:00,Customer,3 bhk,3 bhk,"['3', 'bhk']",3 bhk,3 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:52.983000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:55.949000+00:00,Customer,north kolkata,north kolkata,"['north', 'kolkata']",north kolkata,north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:15:56.139000+00:00,Bot,we have the following properties within north kolkata,we have the follow property within north kolkata,"['we', 'have', 'the', 'following', 'properties', 'within', 'north', 'kolkata']",we have the following properties within north kolkata,following properties within north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:00.451000+00:00,Customer,eternis on jessore road,eterni on jessore road,"['eternis', 'on', 'jessore', 'road']",eternis on jessore road,eternis jessore road
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:00.675000+00:00,Bot,"eternis is located on jessore road, doltala more, north kolkata.
+
+the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.","eternis be locate on jessore road doltala more north kolkata 
+
+ the project house 2/3/4bhk apartment and spread over 345 cottah of land area","['eternis', 'is', 'located', 'on', 'jessore', 'road', 'doltala', 'more', 'north', 'kolkata.', 'the', 'project', 'houses', '2', '3', '4bhk', 'apartments', 'and', 'spreads', 'over', '345', 'cottahs', 'of', 'land', 'area.']","eternis is located on jessore road, doltala more, north kolkata.
+
+the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.",eternis located jessore road doltala north kolkata. project houses 2 3 4bhk apartments spreads 345 cottahs land area.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:00.676000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:17.709000+00:00,Customer,location,location,['location'],location,location
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:18.636000+00:00,Bot,"eternis is on jessore road, doltala more with the best locations just minutes away. our property is one of the most impressive ones in this area.
+
+▪ just 3 km from new barrackpur railway station
+▪ just 6 km distance from dumdum airport
+▪ just 1.2 km from madhyamgram chowmatha
+▪ 13.5 km from dumdum metro station
+▪ 900 m from upcoming new barrakpore metro station","eterni be on jessore road doltala more with the good location just minute away our property be one of the most impressive one in this area 
+
+ ▪ just 3 km from new barrackpur railway station 
+ ▪ just 6 km distance from dumdum airport 
+ ▪ just 1.2 km from madhyamgram chowmatha 
+ ▪ 13.5 km from dumdum metro station 
+ ▪ 900 m from upcoming new barrakpore metro station","['eternis', 'is', 'on', 'jessore', 'road', 'doltala', 'more', 'with', 'the', 'best', 'locations', 'just', 'minutes', 'away.', 'our', 'property', 'is', 'one', 'of', 'the', 'most', 'impressive', 'ones', 'in', 'this', 'area.', 'just', '3', 'km', 'from', 'new', 'barrackpur', 'railway', 'station', 'just', '6', 'km', 'distance', 'from', 'dumdum', 'airport', 'just', '1.2', 'km', 'from', 'madhyamgram', 'chowmatha', '13.5', 'km', 'from', 'dumdum', 'metro', 'station', '900', 'm', 'from', 'upcoming', 'new', 'barrakpore', 'metro', 'station']","eternis is on jessore road, doltala more with the best locations just minutes away. our property is one of the most impressive ones in this area.
+
+▪ just 3 km from new barrackpur railway station
+▪ just 6 km distance from dumdum airport
+▪ just 1.2 km from madhyamgram chowmatha
+▪ 13.5 km from dumdum metro station
+▪ 900 m from upcoming new barrakpore metro station",eternis jessore road doltala best locations minutes away. property one impressive ones area. 3 km new barrackpur railway station 6 km distance dumdum airport 1.2 km madhyamgram chowmatha 13.5 km dumdum metro station 900 upcoming new barrakpore metro station
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:18.637000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:29.890000+00:00,Customer,price,price,['price'],price,price
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:30.073000+00:00,Bot,the price of 3bhk flats start from rs 48 lacs onwards,the price of 3bhk flat start from rs 48 lac onwards,"['the', 'price', 'of', '3bhk', 'flats', 'start', 'from', 'rs', '48', 'lacs', 'onwards']",the price of 3bhk flats start from rs 48 lacs onwards,price 3bhk flats start rs 48 lacs onwards
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:16:30.074000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:17:01.222000+00:00,Customer,eternia,eternia,['eternia'],eternia,eternia
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:17:01.350000+00:00,Bot,"imagine a vibrant city life surrounded by the quiet foot-prints of nature. opposite to nsg hub on badu road and 2.2 km from madhyamgram chowmatha – eternia will be an urban living habitat engulfed byacres of green paradise.
+
+native birds, regional trees and a large natural water body surround the locality. a simple walk round this place would take you to a quaint fiction.
+
+eternia will be the new madhyamgram.","imagine a vibrant city life surround by the quiet foot print of nature opposite to nsg hub on badu road and 2.2 km from madhyamgram chowmatha eternia will be an urban live habitat engulf byacre of green paradise 
+
+ native bird regional tree and a large natural water body surround the locality a simple walk round this place would take you to a quaint fiction 
+
+ eternia will be the new madhyamgram","['imagine', 'a', 'vibrant', 'city', 'life', 'surrounded', 'by', 'the', 'quiet', 'foot', 'prints', 'of', 'nature.', 'opposite', 'to', 'nsg', 'hub', 'on', 'badu', 'road', 'and', '2.2', 'km', 'from', 'madhyamgram', 'chowmatha', 'eternia', 'will', 'be', 'an', 'urban', 'living', 'habitat', 'engulfed', 'byacres', 'of', 'green', 'paradise.', 'native', 'birds', 'regional', 'trees', 'and', 'a', 'large', 'natural', 'water', 'body', 'surround', 'the', 'locality.', 'a', 'simple', 'walk', 'round', 'this', 'place', 'would', 'take', 'you', 'to', 'a', 'quaint', 'fiction.', 'eternia', 'will', 'be', 'the', 'new', 'madhyamgram.']","imagine a vibrant city life surrounded by the quiet foot-prints of nature. opposite to nsg hub on badu road and 2.2 km from madhyamgram chowmatha – eternia will be an urban living habitat engulfed byacres of green paradise.
+
+native birds, regional trees and a large natural water body surround the locality. a simple walk round this place would take you to a quaint fiction.
+
+eternia will be the new madhyamgram.",imagine vibrant city life surrounded quiet foot prints nature. opposite nsg hub badu road 2.2 km madhyamgram chowmatha eternia urban living habitat engulfed byacres green paradise. native birds regional trees large natural water body surround locality. simple walk round place would take quaint fiction. eternia new madhyamgram.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:17:01.435000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:17:31.283000+00:00,Customer,location,location,['location'],location,location
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:17:31.444000+00:00,Bot,"eternia is on badu road, madhyamgram",eternia be on badu road madhyamgram,"['eternia', 'is', 'on', 'badu', 'road', 'madhyamgram']","eternia is on badu road, madhyamgram",eternia badu road madhyamgram
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:17:31.445000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:18:36.255000+00:00,Customer,go back to main menu,go back to main menu,"['go', 'back', 'to', 'main', 'menu']",go back to main menu,go back main menu
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:18:36.373000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:18:39.505000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:18:39.669000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:18:42.959000+00:00,Customer,3 bhk,3 bhk,"['3', 'bhk']",3 bhk,3 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:18:43.084000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:06.353000+00:00,Customer,north kolkata,north kolkata,"['north', 'kolkata']",north kolkata,north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:06.542000+00:00,Bot,we have the following properties within north kolkata,we have the follow property within north kolkata,"['we', 'have', 'the', 'following', 'properties', 'within', 'north', 'kolkata']",we have the following properties within north kolkata,following properties within north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:18.798000+00:00,Customer,eternis on jessore road,eterni on jessore road,"['eternis', 'on', 'jessore', 'road']",eternis on jessore road,eternis jessore road
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:19.137000+00:00,Bot,"eternis is located on jessore road, doltala more, north kolkata.
+
+the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.","eternis be locate on jessore road doltala more north kolkata 
+
+ the project house 2/3/4bhk apartment and spread over 345 cottah of land area","['eternis', 'is', 'located', 'on', 'jessore', 'road', 'doltala', 'more', 'north', 'kolkata.', 'the', 'project', 'houses', '2', '3', '4bhk', 'apartments', 'and', 'spreads', 'over', '345', 'cottahs', 'of', 'land', 'area.']","eternis is located on jessore road, doltala more, north kolkata.
+
+the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.",eternis located jessore road doltala north kolkata. project houses 2 3 4bhk apartments spreads 345 cottahs land area.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:19.138000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:26.193000+00:00,Customer,location,location,['location'],location,location
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:26.886000+00:00,Bot,"eternis is on jessore road, doltala more with the best locations just minutes away. our property is one of the most impressive ones in this area.
+
+▪ just 3 km from new barrackpur railway station
+▪ just 6 km distance from dumdum airport
+▪ just 1.2 km from madhyamgram chowmatha
+▪ 13.5 km from dumdum metro station
+▪ 900 m from upcoming new barrakpore metro station","eterni be on jessore road doltala more with the good location just minute away our property be one of the most impressive one in this area 
+
+ ▪ just 3 km from new barrackpur railway station 
+ ▪ just 6 km distance from dumdum airport 
+ ▪ just 1.2 km from madhyamgram chowmatha 
+ ▪ 13.5 km from dumdum metro station 
+ ▪ 900 m from upcoming new barrakpore metro station","['eternis', 'is', 'on', 'jessore', 'road', 'doltala', 'more', 'with', 'the', 'best', 'locations', 'just', 'minutes', 'away.', 'our', 'property', 'is', 'one', 'of', 'the', 'most', 'impressive', 'ones', 'in', 'this', 'area.', 'just', '3', 'km', 'from', 'new', 'barrackpur', 'railway', 'station', 'just', '6', 'km', 'distance', 'from', 'dumdum', 'airport', 'just', '1.2', 'km', 'from', 'madhyamgram', 'chowmatha', '13.5', 'km', 'from', 'dumdum', 'metro', 'station', '900', 'm', 'from', 'upcoming', 'new', 'barrakpore', 'metro', 'station']","eternis is on jessore road, doltala more with the best locations just minutes away. our property is one of the most impressive ones in this area.
+
+▪ just 3 km from new barrackpur railway station
+▪ just 6 km distance from dumdum airport
+▪ just 1.2 km from madhyamgram chowmatha
+▪ 13.5 km from dumdum metro station
+▪ 900 m from upcoming new barrakpore metro station",eternis jessore road doltala best locations minutes away. property one impressive ones area. 3 km new barrackpur railway station 6 km distance dumdum airport 1.2 km madhyamgram chowmatha 13.5 km dumdum metro station 900 upcoming new barrakpore metro station
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:26.887000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:33.545000+00:00,Customer,go back to main menu,go back to main menu,"['go', 'back', 'to', 'main', 'menu']",go back to main menu,go back main menu
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:34.137000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:37.835000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:37.969000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:42.488000+00:00,Customer,3 bhk,3 bhk,"['3', 'bhk']",3 bhk,3 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:42.776000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:46.488000+00:00,Customer,south kolkata,south kolkata,"['south', 'kolkata']",south kolkata,south kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:19:46.745000+00:00,Bot,we have the following properties within south kolkata,we have the follow property within south kolkata,"['we', 'have', 'the', 'following', 'properties', 'within', 'south', 'kolkata']",we have the following properties within south kolkata,following properties within south kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:20:38.054000+00:00,Customer,greenfield city near behala chowrasta metro,greenfield city near behala chowrasta metro,"['greenfield', 'city', 'near', 'behala', 'chowrasta', 'metro']",greenfield city near behala chowrasta metro,greenfield city near behala chowrasta metro
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:20:38.336000+00:00,Bot,"greenfield city project llp is a limited liability partnership between bengal greenfield housing development company limited (bghdcl) & srijan realty private limited (srpl) located on jote sibrampur road near behala chowrasta metro, south-west kolkata.
+
+the project soars skywards, housing luxurious 3bhk high rise apartments.","greenfield city project llp be a limited liability partnership between bengal greenfield housing development company limit bghdcl srijan realty private limited srpl locate on jote sibrampur road near behala chowrasta metro south west kolkata 
+
+ the project soar skyward housing luxurious 3bhk high rise apartment","['greenfield', 'city', 'project', 'llp', 'is', 'a', 'limited', 'liability', 'partnership', 'between', 'bengal', 'greenfield', 'housing', 'development', 'company', 'limited', '(bghdcl)', 'srijan', 'realty', 'private', 'limited', '(srpl)', 'located', 'on', 'jote', 'sibrampur', 'road', 'near', 'behala', 'chowrasta', 'metro', 'south', 'west', 'kolkata.', 'the', 'project', 'soars', 'skywards', 'housing', 'luxurious', '3bhk', 'high', 'rise', 'apartments.']","greenfield city project llp is a limited liability partnership between bengal greenfield housing development company limited (bghdcl) & srijan realty private limited (srpl) located on jote sibrampur road near behala chowrasta metro, south-west kolkata.
+
+the project soars skywards, housing luxurious 3bhk high rise apartments.",greenfield city project llp limited liability partnership bengal greenfield housing development company limited (bghdcl) srijan realty private limited (srpl) located jote sibrampur road near behala chowrasta metro south west kolkata. project soars skywards housing luxurious 3bhk high rise apartments.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:20:38.337000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:20:57.143000+00:00,Customer,location,location,['location'],location,location
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:20:57.368000+00:00,Bot,"greenfield city is near behala chowrasta, shibrampur with the best locations just minutes away. our property is one of the most impressive ones in this area.
+ 
+▪ just 4 km from upcoming behala chowrasta metro
+▪ just 9 km from mahanayak uttam kumar metro station
+▪ just 1.5 km from shakuntala park bus stand
+▪ super markets like bazaar kolkata nearby
+▪ all major banks have their operating branches & atm nearby
+▪ nearest multiplex, ajanta cinema is about 9 km","greenfield city be near behala chowrasta shibrampur with the good location just minute away our property be one of the most impressive one in this area 
+ 
+ ▪ just 4 km from upcoming behala chowrasta metro 
+ ▪ just 9 km from mahanayak uttam kumar metro station 
+ ▪ just 1.5 km from shakuntala park bus stand 
+ ▪ super market like bazaar kolkata nearby 
+ ▪ all major bank have their operate branch atm nearby 
+ ▪ near multiplex ajanta cinema be about 9 km","['greenfield', 'city', 'is', 'near', 'behala', 'chowrasta', 'shibrampur', 'with', 'the', 'best', 'locations', 'just', 'minutes', 'away.', 'our', 'property', 'is', 'one', 'of', 'the', 'most', 'impressive', 'ones', 'in', 'this', 'area.', 'just', '4', 'km', 'from', 'upcoming', 'behala', 'chowrasta', 'metro', 'just', '9', 'km', 'from', 'mahanayak', 'uttam', 'kumar', 'metro', 'station', 'just', '1.5', 'km', 'from', 'shakuntala', 'park', 'bus', 'stand', 'super', 'markets', 'like', 'bazaar', 'kolkata', 'nearby', 'all', 'major', 'banks', 'have', 'their', 'operating', 'branches', 'atm', 'nearby', 'nearest', 'multiplex', 'ajanta', 'cinema', 'is', 'about', '9', 'km']","greenfield city is near behala chowrasta, shibrampur with the best locations just minutes away. our property is one of the most impressive ones in this area.
+ 
+▪ just 4 km from upcoming behala chowrasta metro
+▪ just 9 km from mahanayak uttam kumar metro station
+▪ just 1.5 km from shakuntala park bus stand
+▪ super markets like bazaar kolkata nearby
+▪ all major banks have their operating branches & atm nearby
+▪ nearest multiplex, ajanta cinema is about 9 km",greenfield city near behala chowrasta shibrampur best locations minutes away. property one impressive ones area. 4 km upcoming behala chowrasta metro 9 km mahanayak uttam kumar metro station 1.5 km shakuntala park bus stand super markets like bazaar kolkata nearby major banks operating branches atm nearby nearest multiplex ajanta cinema 9 km
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:20:57.369000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:34.235000+00:00,Customer,pricing,pricing,['pricing'],pricing,pricing
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:34.439000+00:00,Bot,the price of 3bhk flats start from rs. 58 lacs onwards,the price of 3bhk flat start from rs 58 lac onwards,"['the', 'price', 'of', '3bhk', 'flats', 'start', 'from', 'rs.', '58', 'lacs', 'onwards']",the price of 3bhk flats start from rs. 58 lacs onwards,price 3bhk flats start rs. 58 lacs onwards
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:34.440000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:49.848000+00:00,Customer,go back to main menu,go back to main menu,"['go', 'back', 'to', 'main', 'menu']",go back to main menu,go back main menu
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:50.082000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:52.814000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:53.340000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:57.211000+00:00,Customer,3 bhk,3 bhk,"['3', 'bhk']",3 bhk,3 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:21:57.344000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:00.531000+00:00,Customer,central kolkata,central kolkata,"['central', 'kolkata']",central kolkata,central kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:00.678000+00:00,Bot,here are the properties located within central kolkata,here be the property locate within central kolkata,"['here', 'are', 'the', 'properties', 'located', 'within', 'central', 'kolkata']",here are the properties located within central kolkata,properties located within central kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:03.933000+00:00,Customer,south kolkata,south kolkata,"['south', 'kolkata']",south kolkata,south kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:04.043000+00:00,Bot,we have the following properties within south kolkata,we have the follow property within south kolkata,"['we', 'have', 'the', 'following', 'properties', 'within', 'south', 'kolkata']",we have the following properties within south kolkata,following properties within south kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:07.643000+00:00,Customer,"swapnopuron on amtala, h h road",swapnopuron on amtala h h road,"['swapnopuron', 'on', 'amtala', 'h', 'h', 'road']","swapnopuron on amtala, h h road",swapnopuron amtala h h road
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:07.874000+00:00,Bot,"spread over 8 bigha approx. of land, swapno puron amtala, phase -1 is the first gated community residential project in amtala, d.h road by prestigious and renowned developers srijan & star group.
+here every space embodies joy and comfort and every facility infuses a spirit of celebration.
+
+300 + apartments in 11 blocks, g+3 floors, swapno puron amtala has enough green space and a splendid water body view with all modern amenities and facilities.","spread over 8 bigha approx of land swapno puron amtala phase -1 be the first gate community residential project in amtala d.h road by prestigious and renowned developer srijan star group 
+ here every space embody joy and comfort and every facility infuse a spirit of celebration 
+
+ 300 + apartment in 11 block g+3 floor swapno puron amtala have enough green space and a splendid water body view with all modern amenity and facility","['spread', 'over', '8', 'bigha', 'approx.', 'of', 'land', 'swapno', 'puron', 'amtala', 'phase', '1', 'is', 'the', 'first', 'gated', 'community', 'residential', 'project', 'in', 'amtala', 'd.h', 'road', 'by', 'prestigious', 'and', 'renowned', 'developers', 'srijan', 'star', 'group.', 'here', 'every', 'space', 'embodies', 'joy', 'and', 'comfort', 'and', 'every', 'facility', 'infuses', 'a', 'spirit', 'of', 'celebration.', '300', '+', 'apartments', 'in', '11', 'blocks', 'g+3', 'floors', 'swapno', 'puron', 'amtala', 'has', 'enough', 'green', 'space', 'and', 'a', 'splendid', 'water', 'body', 'view', 'with', 'all', 'modern', 'amenities', 'and', 'facilities.']","spread over 8 bigha approx. of land, swapno puron amtala, phase -1 is the first gated community residential project in amtala, d.h road by prestigious and renowned developers srijan & star group.
+here every space embodies joy and comfort and every facility infuses a spirit of celebration.
+
+300 + apartments in 11 blocks, g+3 floors, swapno puron amtala has enough green space and a splendid water body view with all modern amenities and facilities.",spread 8 bigha approx. land swapno puron amtala phase 1 first gated community residential project amtala d.h road prestigious renowned developers srijan star group. every space embodies joy comfort every facility infuses spirit celebration. 300 + apartments 11 blocks g+3 floors swapno puron amtala enough green space splendid water body view modern amenities facilities.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:07.875000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:32.543000+00:00,Customer,location,location,['location'],location,location
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:32.748000+00:00,Bot,"swapnopuron is on amtala d.h road sunny park, beside sbi and hdfc bank, amtala branch",swapnopuron be on amtala d.h road sunny park beside sbi and hdfc bank amtala branch,"['swapnopuron', 'is', 'on', 'amtala', 'd.h', 'road', 'sunny', 'park', 'beside', 'sbi', 'and', 'hdfc', 'bank', 'amtala', 'branch']","swapnopuron is on amtala d.h road sunny park, beside sbi and hdfc bank, amtala branch",swapnopuron amtala d.h road sunny park beside sbi hdfc bank amtala branch
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:32.835000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:48.423000+00:00,Customer,available sizes & floor plans,available size floor plan,"['available', 'sizes', 'floor', 'plans']",available sizes & floor plans,available sizes floor plans
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:22:48.578000+00:00,Bot,"we have the following sizes available in 3 bhk.
+
+click on one to check the unit plan.","we have the follow size available in 3 bhk 
+
+ click on one to check the unit plan","['we', 'have', 'the', 'following', 'sizes', 'available', 'in', '3', 'bhk.', 'click', 'on', 'one', 'to', 'check', 'the', 'unit', 'plan.']","we have the following sizes available in 3 bhk.
+
+click on one to check the unit plan.",following sizes available 3 bhk. click one check unit plan.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:01.214000+00:00,Customer,754 sqft,754 sqft,"['754', 'sqft']",754 sqft,754 sqft
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:02.147000+00:00,Bot,image,image,['image'],image,image
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:02.148000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:38.235000+00:00,Customer,possession,possession,['possession'],possession,possession
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:38.448000+00:00,Bot,"▪ phase i - june 2019 + 6 months grace period  
+▪ phase ii - mid 2020 + 6 months grace period","▪ phase i june 2019 + 6 month grace period  
+ ▪ phase ii mid 2020 + 6 month grace period","['phase', 'i', 'june', '2019', '+', '6', 'months', 'grace', 'period', 'phase', 'ii', 'mid', '2020', '+', '6', 'months', 'grace', 'period']","▪ phase i - june 2019 + 6 months grace period  
+▪ phase ii - mid 2020 + 6 months grace period",phase june 2019 + 6 months grace period phase ii mid 2020 + 6 months grace period
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:38.449000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:54.684000+00:00,Customer,go back to main menu,go back to main menu,"['go', 'back', 'to', 'main', 'menu']",go back to main menu,go back main menu
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:54.841000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:58.168000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:23:58.343000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:01.716000+00:00,Customer,3 bhk,3 bhk,"['3', 'bhk']",3 bhk,3 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:02.077000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:05.289000+00:00,Customer,east kolkata,east kolkata,"['east', 'kolkata']",east kolkata,east kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:05.435000+00:00,Bot,here are the properties located within east kolkata,here be the property locate within east kolkata,"['here', 'are', 'the', 'properties', 'located', 'within', 'east', 'kolkata']",here are the properties located within east kolkata,properties located within east kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:17.062000+00:00,Customer,"panache on mahisbathan, behind sector 5",panache on mahisbathan behind sector 5,"['panache', 'on', 'mahisbathan', 'behind', 'sector', '5']","panache on mahisbathan, behind sector 5",panache mahisbathan behind sector 5
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:17.347000+00:00,Bot,"panache is one of our most prestigious residential condo projects till date, a resplendent rendezvous on the water’s edge in ‘happening’ sector v, salt lake.
+
+all apartments are vaastu-compliant, with at least three sides open. project elevation designed to exude positive and uplifting feel.
+
+it rises head and shoulders above the ambient skyline of kolkata’s it district, bringing together some of the finest consultants in the business.","panache be one of our most prestigious residential condo project till date a resplendent rendezvous on the water ’s edge in happen sector v salt lake 
+
+ all apartment be vaastu compliant with at least three side open project elevation design to exude positive and uplifting feel 
+
+ it rise head and shoulder above the ambient skyline of kolkata ’s it district bring together some of the fine consultant in the business","['panache', 'is', 'one', 'of', 'our', 'most', 'prestigious', 'residential', 'condo', 'projects', 'till', 'date', 'a', 'resplendent', 'rendezvous', 'on', 'the', 'water', 's', 'edge', 'in', 'happening', 'sector', 'v', 'salt', 'lake.', 'all', 'apartments', 'are', 'vaastu', 'compliant', 'with', 'at', 'least', 'three', 'sides', 'open.', 'project', 'elevation', 'designed', 'to', 'exude', 'positive', 'and', 'uplifting', 'feel.', 'it', 'rises', 'head', 'and', 'shoulders', 'above', 'the', 'ambient', 'skyline', 'of', 'kolkata', 's', 'it', 'district', 'bringing', 'together', 'some', 'of', 'the', 'finest', 'consultants', 'in', 'the', 'business.']","panache is one of our most prestigious residential condo projects till date, a resplendent rendezvous on the water’s edge in ‘happening’ sector v, salt lake.
+
+all apartments are vaastu-compliant, with at least three sides open. project elevation designed to exude positive and uplifting feel.
+
+it rises head and shoulders above the ambient skyline of kolkata’s it district, bringing together some of the finest consultants in the business.",panache one prestigious residential condo projects till date resplendent rendezvous water edge happening sector v salt lake. apartments vaastu compliant least three sides open. project elevation designed exude positive uplifting feel. rises head shoulders ambient skyline kolkata district bringing together finest consultants business.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:17.348000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:23.767000+00:00,Customer,location,location,['location'],location,location
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:24.041000+00:00,Bot,"panache is on mahisbathan, behind sector 5",panache be on mahisbathan behind sector 5,"['panache', 'is', 'on', 'mahisbathan', 'behind', 'sector', '5']","panache is on mahisbathan, behind sector 5",panache mahisbathan behind sector 5
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:24.042000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:35.621000+00:00,Customer,possession,possession,['possession'],possession,possession
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:35.970000+00:00,Bot,july 2018 + 6th month grace period,july 2018 + 6th month grace period,"['july', '2018', '+', '6th', 'month', 'grace', 'period']",july 2018 + 6th month grace period,july 2018 + 6th month grace period
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:35.971000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:44.939000+00:00,Customer,why panache?,why panache,"['why', 'panache']",why panache?,panache
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:45.183000+00:00,Bot,"▪ on the water’s edge in ‘happening’ sector v, salt lake
+▪ tallest residential marvels in the neighbourhood
+▪ infinite view of the 1,000 acre wetlands
+▪ 28,000 sq ft clubhouse
+▪ wide open greens, manicured walkways, naturally lit surroundings and a funnel-shaped architecture for ample wind circulation","▪ on the water ’s edge in happen sector v salt lake 
+ ▪ tall residential marvel in the neighbourhood 
+ ▪ infinite view of the 1,000 acre wetland 
+ ▪ 28,000 sq ft clubhouse 
+ ▪ wide open green manicure walkway naturally light surrounding and a funnel shape architecture for ample wind circulation","['on', 'the', 'water', 's', 'edge', 'in', 'happening', 'sector', 'v', 'salt', 'lake', 'tallest', 'residential', 'marvels', 'in', 'the', 'neighbourhood', 'infinite', 'view', 'of', 'the', '1', '000', 'acre', 'wetlands', '28', '000', 'sq', 'ft', 'clubhouse', 'wide', 'open', 'greens', 'manicured', 'walkways', 'naturally', 'lit', 'surroundings', 'and', 'a', 'funnel', 'shaped', 'architecture', 'for', 'ample', 'wind', 'circulation']","▪ on the water’s edge in ‘happening’ sector v, salt lake
+▪ tallest residential marvels in the neighbourhood
+▪ infinite view of the 1,000 acre wetlands
+▪ 28,000 sq ft clubhouse
+▪ wide open greens, manicured walkways, naturally lit surroundings and a funnel-shaped architecture for ample wind circulation",water edge happening sector v salt lake tallest residential marvels neighbourhood infinite view 1 000 acre wetlands 28 000 sq ft clubhouse wide open greens manicured walkways naturally lit surroundings funnel shaped architecture ample wind circulation
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:45.184000+00:00,Bot,take a look at the image gallery below,take a look at the image gallery below,"['take', 'a', 'look', 'at', 'the', 'image', 'gallery', 'below']",take a look at the image gallery below,take look image gallery
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:24:45.273000+00:00,Bot,how else can we help you?,how else can we help you,"['how', 'else', 'can', 'we', 'help', 'you']",how else can we help you?,else help
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:25:37.377000+00:00,Customer,get a call back from our property advisor,get a call back from our property advisor,"['get', 'a', 'call', 'back', 'from', 'our', 'property', 'advisor']",get a call back from our property advisor,get call back property advisor
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:25:37.543000+00:00,Bot,"great!
+
+our property advisor will be happy to help you.","great 
+
+ our property advisor will be happy to help you","['great', 'our', 'property', 'advisor', 'will', 'be', 'happy', 'to', 'help', 'you.']","great!
+
+our property advisor will be happy to help you.",great property advisor happy help you.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:25:37.544000+00:00,Bot,"we already have your name and contact number.
+
+could you also please share an email id of yours to send our project details?","we already have your name and contact number 
+
+ could you also please share an email i d of yours to send our project detail","['we', 'already', 'have', 'your', 'name', 'and', 'contact', 'number.', 'could', 'you', 'also', 'please', 'share', 'an', 'email', 'id', 'of', 'yours', 'to', 'send', 'our', 'project', 'details']","we already have your name and contact number.
+
+could you also please share an email id of yours to send our project details?",already name contact number. could also please share email id send project details
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:05.469000+00:00,Customer,no.. later,no later,"['no..', 'later']",no.. later,no.. later
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:05.869000+00:00,Bot,please enter a valid email address,please enter a valid email address,"['please', 'enter', 'a', 'valid', 'email', 'address']",please enter a valid email address,please enter valid email address
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:18.282000+00:00,Customer,go back to main menu,go back to main menu,"['go', 'back', 'to', 'main', 'menu']",go back to main menu,go back main menu
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:18.442000+00:00,Bot,let's start with your name.,let us start with your name,"['let', 's', 'start', 'with', 'your', 'name.']",let's start with your name.,let start name.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:33.647000+00:00,Customer,snehansu sen,snehansu sen,"['snehansu', 'sen']",snehansu sen,snehansu sen
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:34.191000+00:00,Bot,"that's a lovely name, snehansu sen!",that be a lovely name snehansu sen,"['that', 's', 'a', 'lovely', 'name', 'snehansu', 'sen']","that's a lovely name, snehansu sen!",lovely name snehansu sen
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:34.192000+00:00,Bot,a phone number we can contact you on?.,a phone number we can contact you on,"['a', 'phone', 'number', 'we', 'can', 'contact', 'you', 'on', '.']",a phone number we can contact you on?.,phone number contact .
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:46.873000+00:00,Customer,9.20E+11,9.20E+11,['+919593526602'],9.20E+11,9.20E+11
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:49.244000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:57.340000+00:00,Customer,commercial,commercial,['commercial'],commercial,commercial
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:26:58.037000+00:00,Bot,which commercial property are you interested in?,which commercial property be you interested in,"['which', 'commercial', 'property', 'are', 'you', 'interested', 'in']",which commercial property are you interested in?,commercial property interested
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:15.544000+00:00,Customer,logistics park,logistics park,"['logistics', 'park']",logistics park,logistics park
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:15.741000+00:00,Bot,we have the following properties under logistics park,we have the follow property under logistic park,"['we', 'have', 'the', 'following', 'properties', 'under', 'logistics', 'park']",we have the following properties under logistics park,following properties logistics park
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:21.639000+00:00,Customer,shopping malls,shopping mall,"['shopping', 'malls']",shopping malls,shopping malls
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:21.976000+00:00,Bot,which location are you looking for?,which location be you look for,"['which', 'location', 'are', 'you', 'looking', 'for']",which location are you looking for?,location looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:29.956000+00:00,Customer,hospitality,hospitality,['hospitality'],hospitality,hospitality
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:30.063000+00:00,Bot,which location are you looking for?,which location be you look for,"['which', 'location', 'are', 'you', 'looking', 'for']",which location are you looking for?,location looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:39.803000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:40.073000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:51.078000+00:00,Customer,3 bhk,3 bhk,"['3', 'bhk']",3 bhk,3 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:51.346000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:54.280000+00:00,Customer,east kolkata,east kolkata,"['east', 'kolkata']",east kolkata,east kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:54.777000+00:00,Bot,here are the properties located within east kolkata,here be the property locate within east kolkata,"['here', 'are', 'the', 'properties', 'located', 'within', 'east', 'kolkata']",here are the properties located within east kolkata,properties located within east kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:59.076000+00:00,Customer,"panache on mahisbathan, behind sector 5",panache on mahisbathan behind sector 5,"['panache', 'on', 'mahisbathan', 'behind', 'sector', '5']","panache on mahisbathan, behind sector 5",panache mahisbathan behind sector 5
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:59.374000+00:00,Bot,"panache is one of our most prestigious residential condo projects till date, a resplendent rendezvous on the water’s edge in ‘happening’ sector v, salt lake.
+
+all apartments are vaastu-compliant, with at least three sides open. project elevation designed to exude positive and uplifting feel.
+
+it rises head and shoulders above the ambient skyline of kolkata’s it district, bringing together some of the finest consultants in the business.","panache be one of our most prestigious residential condo project till date a resplendent rendezvous on the water ’s edge in happen sector v salt lake 
+
+ all apartment be vaastu compliant with at least three side open project elevation design to exude positive and uplifting feel 
+
+ it rise head and shoulder above the ambient skyline of kolkata ’s it district bring together some of the fine consultant in the business","['panache', 'is', 'one', 'of', 'our', 'most', 'prestigious', 'residential', 'condo', 'projects', 'till', 'date', 'a', 'resplendent', 'rendezvous', 'on', 'the', 'water', 's', 'edge', 'in', 'happening', 'sector', 'v', 'salt', 'lake.', 'all', 'apartments', 'are', 'vaastu', 'compliant', 'with', 'at', 'least', 'three', 'sides', 'open.', 'project', 'elevation', 'designed', 'to', 'exude', 'positive', 'and', 'uplifting', 'feel.', 'it', 'rises', 'head', 'and', 'shoulders', 'above', 'the', 'ambient', 'skyline', 'of', 'kolkata', 's', 'it', 'district', 'bringing', 'together', 'some', 'of', 'the', 'finest', 'consultants', 'in', 'the', 'business.']","panache is one of our most prestigious residential condo projects till date, a resplendent rendezvous on the water’s edge in ‘happening’ sector v, salt lake.
+
+all apartments are vaastu-compliant, with at least three sides open. project elevation designed to exude positive and uplifting feel.
+
+it rises head and shoulders above the ambient skyline of kolkata’s it district, bringing together some of the finest consultants in the business.",panache one prestigious residential condo projects till date resplendent rendezvous water edge happening sector v salt lake. apartments vaastu compliant least three sides open. project elevation designed exude positive uplifting feel. rises head shoulders ambient skyline kolkata district bringing together finest consultants business.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:27:59.375000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:10.602000+00:00,Customer,schedule a visit/get a callback,schedule a visit get a callback,"['schedule', 'a', 'visit', 'get', 'a', 'callback']",schedule a visit/get a callback,schedule visit get callback
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:10.835000+00:00,Bot,"we have designed a state of the art experience centre to show you everything you may want to know about the project.
+
+lets get you there!","we have design a state of the art experience centre to show you everything you may want to know about the project 
+
+ let get you there","['we', 'have', 'designed', 'a', 'state', 'of', 'the', 'art', 'experience', 'centre', 'to', 'show', 'you', 'everything', 'you', 'may', 'want', 'to', 'know', 'about', 'the', 'project.', 'lets', 'get', 'you', 'there']","we have designed a state of the art experience centre to show you everything you may want to know about the project.
+
+lets get you there!",designed state art experience centre show everything may want know project. lets get
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:10.839000+00:00,Bot,"we already have your name and contact number.
+
+could you also please share an email id of yours to send our project details?","we already have your name and contact number 
+
+ could you also please share an email i d of yours to send our project detail","['we', 'already', 'have', 'your', 'name', 'and', 'contact', 'number.', 'could', 'you', 'also', 'please', 'share', 'an', 'email', 'id', 'of', 'yours', 'to', 'send', 'our', 'project', 'details']","we already have your name and contact number.
+
+could you also please share an email id of yours to send our project details?",already name contact number. could also please share email id send project details
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:28.830000+00:00,Customer,go back to main menu,go back to main menu,"['go', 'back', 'to', 'main', 'menu']",go back to main menu,go back main menu
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:29.170000+00:00,Bot,what kind of property are you looking for?,what kind of property be you look for,"['what', 'kind', 'of', 'property', 'are', 'you', 'looking', 'for']",what kind of property are you looking for?,kind property looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:34.261000+00:00,Customer,residential,residential,['residential'],residential,residential
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:34.557000+00:00,Bot,how many bedrooms are you looking for?,how many bedroom be you look for,"['how', 'many', 'bedrooms', 'are', 'you', 'looking', 'for']",how many bedrooms are you looking for?,many bedrooms looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:40.343000+00:00,Customer,2 bhk,2 bhk,"['2', 'bhk']",2 bhk,2 bhk
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:40.471000+00:00,Bot,which location within kolkata are you looking for?,which location within kolkata be you look for,"['which', 'location', 'within', 'kolkata', 'are', 'you', 'looking', 'for']",which location within kolkata are you looking for?,location within kolkata looking
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:48.688000+00:00,Customer,north kolkata,north kolkata,"['north', 'kolkata']",north kolkata,north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:48.946000+00:00,Bot,we have the following properties within north kolkata,we have the follow property within north kolkata,"['we', 'have', 'the', 'following', 'properties', 'within', 'north', 'kolkata']",we have the following properties within north kolkata,following properties within north kolkata
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:56.699000+00:00,Customer,eternia,eternia,['eternia'],eternia,eternia
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:56.983000+00:00,Bot,"""imagine a vibrant city life surrounded by the quiet foot-prints of nature. opposite to nsg hub on badu road and 2.2 km from madhyamgram chowmatha – eternia will be an urban living habitat engulfed byacres of green paradise.
+
+native birds, regional trees and a large natural water body surround the locality. a simple walk round this place would take you to a quaint fiction.
+
+eternia will be the new madhyamgram.""","imagine a vibrant city life surround by the quiet foot print of nature opposite to nsg hub on badu road and 2.2 km from madhyamgram chowmatha eternia will be an urban live habitat engulf byacre of green paradise 
+
+ native bird regional tree and a large natural water body surround the locality a simple walk round this place would take you to a quaint fiction 
+
+ eternia will be the new madhyamgram","['imagine', 'a', 'vibrant', 'city', 'life', 'surrounded', 'by', 'the', 'quiet', 'foot', 'prints', 'of', 'nature.', 'opposite', 'to', 'nsg', 'hub', 'on', 'badu', 'road', 'and', '2.2', 'km', 'from', 'madhyamgram', 'chowmatha', 'eternia', 'will', 'be', 'an', 'urban', 'living', 'habitat', 'engulfed', 'byacres', 'of', 'green', 'paradise.', 'native', 'birds', 'regional', 'trees', 'and', 'a', 'large', 'natural', 'water', 'body', 'surround', 'the', 'locality.', 'a', 'simple', 'walk', 'round', 'this', 'place', 'would', 'take', 'you', 'to', 'a', 'quaint', 'fiction.', 'eternia', 'will', 'be', 'the', 'new', 'madhyamgram.']","""imagine a vibrant city life surrounded by the quiet foot-prints of nature. opposite to nsg hub on badu road and 2.2 km from madhyamgram chowmatha – eternia will be an urban living habitat engulfed byacres of green paradise.
+
+native birds, regional trees and a large natural water body surround the locality. a simple walk round this place would take you to a quaint fiction.
+
+eternia will be the new madhyamgram.""",imagine vibrant city life surrounded quiet foot prints nature. opposite nsg hub badu road 2.2 km madhyamgram chowmatha eternia urban living habitat engulfed byacres green paradise. native birds regional trees large natural water body surround locality. simple walk round place would take quaint fiction. eternia new madhyamgram.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:28:56.984000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:29:08.501000+00:00,Customer,eternis,eterni,['eternis'],eternis,eternis
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:29:08.674000+00:00,Bot,"we have eternis on jessore road.
+
+eternis is located on jessore road, doltala more, north kolkata. the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.","we have eterni on jessore road 
+
+ eterni be locate on jessore road doltala more north kolkata the project house 2/3/4bhk apartment and spread over 345 cottah of land area","['we', 'have', 'eternis', 'on', 'jessore', 'road.', 'eternis', 'is', 'located', 'on', 'jessore', 'road', 'doltala', 'more', 'north', 'kolkata.', 'the', 'project', 'houses', '2', '3', '4bhk', 'apartments', 'and', 'spreads', 'over', '345', 'cottahs', 'of', 'land', 'area.']","we have eternis on jessore road.
+
+eternis is located on jessore road, doltala more, north kolkata. the project houses 2/3/4bhk apartments and spreads over 345 cottahs of land area.",eternis jessore road. eternis located jessore road doltala north kolkata. project houses 2 3 4bhk apartments spreads 345 cottahs land area.
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:29:08.675000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:29:18.143000+00:00,Customer,location,location,['location'],location,location
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:29:18.380000+00:00,Bot,"eternis is on jessore road, doltala more with the best locations just minutes away. our property is one of the most impressive ones in this area.
+
+● just 3 km from new barrackpur railway station
+● just 6 km distance from dumdum airport
+● just 1.2 km from madhyamgram chowmatha
+● 13.5 km from dumdum metro station
+● 900 m from upcoming new barrakpore metro station","eterni be on jessore road doltala more with the good location just minute away our property be one of the most impressive one in this area 
+
+ ● just 3 km from new barrackpur railway station 
+ ● just 6 km distance from dumdum airport 
+ ● just 1.2 km from madhyamgram chowmatha 
+ ● 13.5 km from dumdum metro station 
+ ● 900 m from upcoming new barrakpore metro station","['eternis', 'is', 'on', 'jessore', 'road', 'doltala', 'more', 'with', 'the', 'best', 'locations', 'just', 'minutes', 'away.', 'our', 'property', 'is', 'one', 'of', 'the', 'most', 'impressive', 'ones', 'in', 'this', 'area.', 'just', '3', 'km', 'from', 'new', 'barrackpur', 'railway', 'station', 'just', '6', 'km', 'distance', 'from', 'dumdum', 'airport', 'just', '1.2', 'km', 'from', 'madhyamgram', 'chowmatha', '13.5', 'km', 'from', 'dumdum', 'metro', 'station', '900', 'm', 'from', 'upcoming', 'new', 'barrakpore', 'metro', 'station']","eternis is on jessore road, doltala more with the best locations just minutes away. our property is one of the most impressive ones in this area.
+
+● just 3 km from new barrackpur railway station
+● just 6 km distance from dumdum airport
+● just 1.2 km from madhyamgram chowmatha
+● 13.5 km from dumdum metro station
+● 900 m from upcoming new barrakpore metro station",eternis jessore road doltala best locations minutes away. property one impressive ones area. 3 km new barrackpur railway station 6 km distance dumdum airport 1.2 km madhyamgram chowmatha 13.5 km dumdum metro station 900 upcoming new barrakpore metro station
+8b8c697f82ce40e4a04138383676ef5a,2021-07-28T19:29:18.381000+00:00,Bot,take a look at,take a look at,"['take', 'a', 'look', 'at']",take a look at,take look
