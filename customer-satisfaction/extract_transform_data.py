@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup  # for removing html contents
 
 
 def extract_data():
-    with open('8b8c697f82ce40e4a04138383676ef5a.json') as file:
+    with open('bcbafb374f714f328d2c1b0fbf0d0e5e.json') as file:
         data = json.load(file)  # load file data into data var
 
     extracted_list = []  # contains extracted attributes
