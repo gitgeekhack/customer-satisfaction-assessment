@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup  # for removing html contents
 
 
 def extract_data():
-    with open('bcbafb374f714f328d2c1b0fbf0d0e5e.json') as file:
+    with open('8b8c697f82ce40e4a04138383676ef5a.json') as file:
         data = json.load(file)  # load file data into data var
 
     extracted_list = []  # contains extracted attributes
@@ -43,9 +43,9 @@ def transform_data(data_frame):
     # print(data_frame.shape)  # shape of our data
 
     # print(data_frame.isnull().sum())  # checking for null value
-    data_frame.dropna(inplace=True)  # dropping null values
 
     sorted_df = data_frame.sort_values(by=['thread_id', 'created_at'], ascending=[True, True])  # sort whole dataframe
+    sorted_df.dropna(inplace=True)  # dropping null values
     sorted_df = sorted_df.reset_index()  # reset_index of dataframe
     sorted_df = sorted_df.iloc[:, 1:]
     # thread_ids_index = []
@@ -82,6 +82,5 @@ def transform_data(data_frame):
 
 
 # Driver Code
-
 df = extract_data()
 cleaned_df = transform_data(df)
