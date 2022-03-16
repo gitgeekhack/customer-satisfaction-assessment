@@ -30,9 +30,8 @@ class ETL:
                 msg = None
 
             extracted_list.append([agent, msg])  # appending all attributes in list
-        length_of_message = len(extracted_list)
         self.data_frame = pd.DataFrame(extracted_list, columns=['created_by', 'message'])
-        return self.data_frame, length_of_message
+        return self.data_frame
 
     def transform_data(self, dataframe):
         dataframe.dropna(inplace=True)  # dropping null values
@@ -59,4 +58,5 @@ class ETL:
 
         self.data_frame = self.data_frame.reset_index()  # reset the index for the dataframe
         self.data_frame = self.data_frame.iloc[:, 1:]
-        return self.data_frame
+        length_of_message = len(self.data_frame)
+        return self.data_frame, length_of_message

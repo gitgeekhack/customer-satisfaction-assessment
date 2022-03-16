@@ -4,10 +4,35 @@
 Conversation & Distribution
 {% endblock %}
 
+{% block style %}
+    .header{
+        background-color : #212121;
+        height : 3%;
+        width : 100%;
+        color : white;
+        margin : 20%;
+        font-size : 40px;
+        padding : 1%;
+    }
+    .sub-header{
+        background-color : white;
+        height : 7%;
+        width : 100%;
+        color : #212121;
+        font-size : 17px;
+        padding : 1%;
+    }
+{% endblock %}
+
 {% block header %}
-Conversation & Emotion Distribution
-<div style="margin-top:1%; font-size:22px; margin-left:2%; float:left" >
-    <a class="text-light" href="{{ url_for('main_app.get_data_route') }}">Back to HomePage!</a>
+<div class="header">
+    Conversation & Emotion Distribution
+    <div style="margin-top:1%; font-size:22px; margin-left:2%; float:left" >
+        <a class="text-light" href="{{ url_for('main_app.get_data_route') }}">Back to HomePage!</a>
+    </div>
+    <div style="margin-top:1%; font-size:22px; margin-right:2%; float:right" >
+        <a class="text-light" href="{{ url_for('main_app.fetch_data_route', time='15m') }}">Go to Dashboard!</a>
+    </div>
 </div>
 {% endblock %}
 
@@ -17,6 +42,12 @@ Conversation & Emotion Distribution
     var neg_cnt = {{ emotion_cnt["Negative"] }}
     var neu_cnt = {{ emotion_cnt["Neutral"] }}
     plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+    localStorage.setItem(0, "15Mins");
+
+    total_messages = pos_cnt + neg_cnt + neu_cnt
+    result = "Total Messages : ".concat(total_messages.toString(),", ", "Positive Messages : ",
+    pos_cnt.toString(), ", ", "Negative Messages : ", neg_cnt.toString(), ", ", "Neutral Messages : ", neu_cnt.toString())
+    document.getElementById("total-message").innerHTML = result
 
     function plot_chart(pos_cnt, neg_cnt, neu_cnt, neu_bool){
         google.charts.load('current', {'packages':['corechart']});
@@ -56,11 +87,23 @@ Conversation & Emotion Distribution
     }
 {% endblock %}
 
+{% block sub_header %}
+<div class="sub-header">
+    <p id="total-message" style="float:left;"> Total Messages </p>
+    <div style="float:right; margin-right:2%;">
+        <form method="POST">
+            <input type="checkbox" id="include_neutral" name="include_neutral" onchange="state_changed(this)" />
+            <label for="include_neutral" style="font-size:20px;">Include Neutral</label>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-<div style="margin:1%;">
+<a id="top"></a>
+<div style="margin:2%">
     <div style="width:50%; float:left">
-        <a id="top"></a>
-        <table class="table table-hover" style="column-width: 50%;">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Message</th>
@@ -89,13 +132,7 @@ Conversation & Emotion Distribution
         </div>
     </div>
     <div style="width:50%; float:right">
-        <div style="text-align:right; margin-right:2%;">
-            <form method="POST">
-                <input type="checkbox" id="include_neutral" name="include_neutral" onchange="state_changed(this)" />
-                <label for="include_neutral" style="font-size:20px;">Include Neutral</label>
-            </form>
-        </div>
-        <div id="pieChart_emotion" style="margin-left:15%; width:700px; height:700px;"></div>
+        <div id="pieChart_emotion" style="margin-left:12%; width:700px; height:700px;"></div>
     </div>
 </div>
 {% endblock %}

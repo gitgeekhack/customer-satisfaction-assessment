@@ -4,14 +4,29 @@
 Customer Satisfaction
 {% endblock %}
 
-{% block header %}
-Customer Satisfaction
-{% endblock %}
-
 {% block style %}
+    .header{
+        background-color : #212121;
+        height : 3%;
+        width : 100%;
+        color : white;
+        text-align : center;
+        font-size : 40px;
+        padding : 1%;
+    }
 {% endblock %}
 
 {% block script %}
+localStorage.setItem(0, "15Mins");
+{% endblock %}
+
+{% block header %}
+<div class="header">
+    Customer Satisfaction
+    <div style="margin-top:1%; font-size:22px; margin-right:2%; float:right">
+        <a class="text-light" href="{{ url_for('main_app.fetch_data_route', time='15m') }}">Go to Dashboard!</a>
+    </div>
+</div>
 {% endblock %}
 
 {% block content %}
