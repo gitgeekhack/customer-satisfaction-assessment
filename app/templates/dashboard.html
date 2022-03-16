@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}
+Customer Satisfaction
+{% endblock %}
+
+{% block header %}
+Customer Satisfaction
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block script %}
+    var pos_cnt = {{ emotion_cnt["Positive"] }}
+    var neg_cnt = {{ emotion_cnt["Negative"] }}
+    var neu_cnt = {{ emotion_cnt["Neutral"] }}
+    plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+
+    function plot_chart(pos_cnt, neg_cnt, neu_cnt, neu_bool){
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(draw_pie);
+
+        function draw_pie() {
+            var pie_data = new google.visualization.DataTable();
+            pie_data.addColumn('string', 'Emotion');
+            pie_data.addColumn('number', 'No. of Response');
+            if(neu_bool == 1){
+                pie_data.addRows([
+                ["Positive", pos_cnt],
+                ["Negative", neg_cnt],
+                ["Neutral", neu_cnt]]);
+            }
+            else{
+                pie_data.addRows([
+                ["Positive", pos_cnt],
+                ["Negative", neg_cnt]]);
+            }
+            var options = {
+              is3D: true,
+              fontSize: 20,
+           };
+            var chart = new google.visualization.PieChart(document.getElementById('pieChart_emotion'));
+            chart.draw(pie_data, options);
+        }
+    }
+
+    function state_changed(chkBox) {
+        if (chkBox.checked) {
+            plot_chart(pos_cnt, neg_cnt, neu_cnt, 1)
+        }
+        else {
+            plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+        }
+    }
+
+    function option_updated(){
+        var url = "http://192.168.1.195:5000/"
+        if(document.getElementById("timing").options[0].selected == true){
+            url += "15m"
+        }
+        if(document.getElementById("timing").options[1].selected == true){
+            url += "30m"
+        }
+        if(document.getElementById("timing").options[2].selected == true){
+            url += "1h"
+        }
+        if(document.getElementById("timing").options[3].selected == true){
+            url += "3h"
+        }
+        if(document.getElementById("timing").options[4].selected == true){
+            url += "6h"
+        }
+        if(document.getElementById("timing").options[5].selected == true){
+            url += "12h"
+        }
+        if(document.getElementById("timing").options[6].selected == true){
+            url += "24h"
+        }
+        window.location.href = url
+}
+{% endblock %}
+
+{% block content %}
+<div style="margin:1%; float:right">
+    <input type="checkbox" id="include_neutral" name="include_neutral" onchange="state_changed(this)" />
+    <label for="include_neutral" style="font-size:20px;">Include Neutral</label> <br>
+    <form method="POST">
+        <select name="timing" id="timing" style="padding:10px; font-size:20px; margin-top:5%;" onclick="option_updated()">
+            <option value="15Mins">15 Minutes</option>
+            <option value="30Mins">30 Minutes</option>
+            <option value="1Hr">1 Hour</option>
+            <option value="3Hrs">3 Hours</option>
+            <option value="6Hrs">6 Hours</option>
+            <option value="12Hrs">12 Hours</option>
+            <option value="24Hrs">24 Hours</option>
+        </select>
+    </form>
+</div>
+<div id="pieChart_emotion" style="margin-left:27%; width:900px; height:900px;"></div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Customer Satisfaction
+{% endblock %}
+
+{% block header %}
+Customer Satisfaction
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block content %}
+<div style="margin:6% 10% 10% 25%;">
+ <form method="POST"  enctype="multipart/form-data">
+     {{ form.txt_field(cols="100", rows="20") }}
+     <button type="submit" class="btn btn-lg btn-dark" style="margin:2% 0% 0% 34%">Predict Emotion</button>
+ </form>
+    <div id="loading"></div>
+</div>
+{% endblock %}

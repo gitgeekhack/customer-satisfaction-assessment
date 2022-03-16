@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}
+Conversation & Distribution
+{% endblock %}
+
+{% block header %}
+Conversation & Emotion Distribution
+<div style="margin-top:1%; font-size:22px; margin-left:2%; float:left" >
+    <a class="text-light" href="{{ url_for('main_app.get_data_route') }}">Back to HomePage!</a>
+</div>
+{% endblock %}
+
+
+{% block script %}
+    var pos_cnt = {{ emotion_cnt["Positive"] }}
+    var neg_cnt = {{ emotion_cnt["Negative"] }}
+    var neu_cnt = {{ emotion_cnt["Neutral"] }}
+    plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+
+    function plot_chart(pos_cnt, neg_cnt, neu_cnt, neu_bool){
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(draw_pie);
+
+        function draw_pie() {
+            var pie_data = new google.visualization.DataTable();
+            pie_data.addColumn('string', 'Emotion');
+            pie_data.addColumn('number', 'No. of Response');
+            if(neu_bool == 1){
+                pie_data.addRows([
+                ["Positive", pos_cnt],
+                ["Negative", neg_cnt],
+                ["Neutral", neu_cnt]]);
+            }
+            else{
+                pie_data.addRows([
+                ["Positive", pos_cnt],
+                ["Negative", neg_cnt]]);
+            }
+            var options = {
+              is3D: true,
+              fontSize: 17,
+           };
+            var chart = new google.visualization.PieChart(document.getElementById('pieChart_emotion'));
+            chart.draw(pie_data, options);
+        }
+    }
+
+    function state_changed(chkBox) {
+        if (chkBox.checked) {
+            plot_chart(pos_cnt, neg_cnt, neu_cnt, 1)
+        }
+        else {
+            plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+        }
+    }
+{% endblock %}
+
+{% block content %}
+<div style="margin:1%;">
+    <div style="width:50%; float:left">
+        <a id="top"></a>
+        <table class="table table-hover" style="column-width: 50%;">
+            <thead>
+                <tr>
+                    <th scope="col">Message</th>
+                    <th scope="col">Emotion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for idx in range(message|length) %}
+                    <tr>
+                        {% if emotion[idx] == "Positive" %}
+                            <td style="color: blue;">{{ message[idx] }}</td>
+                            <td style="color: blue;">{{ emotion[idx] }}</td>
+                        {% elif emotion[idx] == "Negative" %}
+                            <td style="color: red;">{{ message[idx] }}</td>
+                            <td style="color: red;">{{ emotion[idx] }}</td>
+                        {% else %}
+                            <td style="color: #FF8C00;">{{ message[idx] }}</td>
+                            <td style="color: #FF8C00;">{{ emotion[idx] }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div style="display:inline-block; vertical-align:bottom; font-size:24px; margin-left:1%; margin-bottom:2%">
+            <a class="text-dark" href="#top">Back to Top!</a>
+        </div>
+    </div>
+    <div style="width:50%; float:right">
+        <div style="text-align:right; margin-right:2%;">
+            <form method="POST">
+                <input type="checkbox" id="include_neutral" name="include_neutral" onchange="state_changed(this)" />
+                <label for="include_neutral" style="font-size:20px;">Include Neutral</label>
+            </form>
+        </div>
+        <div id="pieChart_emotion" style="margin-left:15%; width:700px; height:700px;"></div>
+    </div>
+</div>
+{% endblock %}

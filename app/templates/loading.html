@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Loading...</title>
+        <style>
+            body {
+              position: relative;
+            }
+
+            .center {
+              margin: 0;
+              position: absolute;
+              top: 35%;
+              left: 47%;
+            }
+
+            .loader {
+                border: 16px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 16px solid #212121;
+                width: 100px;
+                height: 100px;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
+            }
+
+            @-webkit-keyframes spin {
+                0% { -webkit-transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+               0% { transform: rotate(0deg); }
+               100% { transform: rotate(360deg); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center">
+            <div class="loader"></div>
+            <p style="margin-left:-12%; font-size:22px">You have {{ length }} messages</p>
+            <p style="margin-left:-25%; font-size:22px">Your messages is being processed!</p>
+        </div>
+    </body>
+    <script> window.location.replace('/processed_data'); </script>
+</html>
