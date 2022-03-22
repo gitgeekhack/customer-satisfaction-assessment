@@ -19,17 +19,15 @@ class PrepareModel:
 
         t3 = time.time()
         abbr = lambda x: "Positive" if x == "POS" else ("Negative" if x == "NEG" else "Neutral")
+
         # getting better emotion with higher confidence
-        emotions = []
-        for idx in self.data_frame.index:
-            if self.data_frame['vader_score'][idx]['score'] > self.data_frame['hugging-face_score'][idx]['score']:
-                emotions.append(abbr(self.data_frame['vader_score'][idx]['label']))
-            else:
-                emotions.append(abbr(self.data_frame['hugging-face_score'][idx]['label']))
+        self.data_frame['final_result'] = self.data_frame.apply(lambda x: abbr(x['vader_score']['label'])
+            if x['vader_score']['score'] > x['hugging-face_score']['score']
+            else abbr(x['hugging-face_score']['label']), axis=1)
 
         print("Comparison time: ", time.time() - t3)
-        self.data_frame['emotion'] = emotions
-        emotion_count = self.data_frame['emotion'].value_counts().to_dict()
+        emotion_count = self.data_frame['final_result'].value_counts().to_dict()
+
         try:
             emotion_count['Negative']
         except KeyError:

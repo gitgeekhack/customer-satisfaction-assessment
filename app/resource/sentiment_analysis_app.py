@@ -62,6 +62,6 @@ def perform_operation():
         return render_template("dashboard.html", emotion_cnt=emotion_count)
     else:
         message = list(data['message'])
-        emotion = list(data['emotion'])
+        emotion = list(data['final_result'])
         return render_template("displayDetection.html", message=message, emotion=emotion,
                                emotion_cnt=emotion_count)
