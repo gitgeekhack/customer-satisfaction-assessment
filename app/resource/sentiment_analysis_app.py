@@ -8,14 +8,14 @@ from app.services.make_request import fetch_data_from_url
 from app.services.prepare_model import PrepareModel
 
 global data, is_dashboard  # for storing messages
-flask_app = Blueprint('main_app', __name__)  # create a blueprint of an application
+sentiment_analysis = Blueprint('sentiment_analysis', __name__)  # create a blueprint of an application
 
 
 class GetData(Form):  # get data form for the textarea
     txt_field = StringField("Data", [validators.DataRequired()], widget=TextArea())
 
 
-@flask_app.route("/", methods=['GET', 'POST'])  # index route
+@sentiment_analysis.route("/", methods=['GET', 'POST'])  # index route
 def get_data_route():  # method for fetching data from the textarea
     global data, is_dashboard
     is_dashboard = False
@@ -33,7 +33,7 @@ def get_data_route():  # method for fetching data from the textarea
     return render_template("getData.html", form=form)
 
 
-@flask_app.route("/<time>", methods=['GET', 'POST'])  # time route
+@sentiment_analysis.route("/<time>", methods=['GET', 'POST'])  # time route
 def fetch_data_route(time):
     global data, is_dashboard
     is_dashboard = True
@@ -49,7 +49,7 @@ def fetch_data_route(time):
 
 
 # perform emotion detection on the json data
-@flask_app.route("/processed_data", methods=['GET', 'POST'])
+@sentiment_analysis.route("/processed_data", methods=['GET', 'POST'])
 def perform_operation():
     global data
     etl_obj = ETL()  # init object for ETL process

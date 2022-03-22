@@ -39,7 +39,7 @@ print("Preparing Emotion Detection Model...")
 model_obj = PrepareModel(data)  # initialize object of BuildModel
 
 print("Predicting an Emotion...")
-distinct_df = model_obj.predict_emotion()
+distinct_df = model_obj.predict_emotion
 
 # print value counts of each labels
 print(distinct_df['emotion'].value_counts())

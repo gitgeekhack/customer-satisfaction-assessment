@@ -28,10 +28,10 @@ Conversation & Distribution
 <div class="header">
     Conversation & Emotion Distribution
     <div style="margin-top:1%; font-size:22px; margin-left:2%; float:left" >
-        <a class="text-light" href="{{ url_for('main_app.get_data_route') }}">Back to HomePage!</a>
+        <a class="text-light" href="{{ url_for('sentiment_analysis.get_data_route') }}">Back to HomePage!</a>
     </div>
     <div style="margin-top:1%; font-size:22px; margin-right:2%; float:right" >
-        <a class="text-light" href="{{ url_for('main_app.fetch_data_route', time='15m') }}">Go to Dashboard!</a>
+        <a class="text-light" href="{{ url_for('sentiment_analysis.fetch_data_route', time='15m') }}">Go to Dashboard!</a>
     </div>
 </div>
 {% endblock %}

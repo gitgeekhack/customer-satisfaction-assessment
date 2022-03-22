@@ -8,7 +8,7 @@ from app.config import CONFIG
 from app.constants import secret_key
 
 
-def create_app(debug=True):
+def create_app(debug=False):
     app = Flask(__name__, template_folder="./templates")
     app.debug = debug
     app.config['SECRET_KEY'] = secret_key

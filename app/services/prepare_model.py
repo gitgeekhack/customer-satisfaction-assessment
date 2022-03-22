@@ -1,9 +1,6 @@
-from transformers import pipeline
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from app.constants import model_name
-
-sentiment_pipeline = pipeline('sentiment-analysis', model=model_name)
-sid_obj = SentimentIntensityAnalyzer()
+import time
+from app.services import sentiment_pipeline
+from app.services import sid_obj
 
 
 class PrepareModel:
@@ -12,46 +9,35 @@ class PrepareModel:
 
     def predict_emotion(self):
         # get "vader" library scores
-        vader_scores = []
-        length = len(self.data_frame)
-        for i in range(length):
-            fetch_dict = get_vader_scores(self.data_frame['message'][i])  # fetching scores from vader
-            vader_scores.append(fetch_dict)  # appending it into 'vader_scores' list
+        t1 = time.time()
+        self.data_frame['vader_score'] = self.data_frame['message'].apply(lambda x: get_vader_scores(x))
+        print("Vader Time : ", time.time() - t1)
+        # get "hugging-face"  scores
+        t2 = time.time()
+        self.data_frame['hugging-face_score'] = sentiment_pipeline(self.data_frame['message'].tolist(), truncation=True)
+        print("HuggingFace Time : ", time.time() - t2)
 
-        # get "hugging face" library scores
-        hugging_face_scores = sentiment_pipeline(list(self.data_frame['message']), truncation=True)
-
+        t3 = time.time()
+        abbr = lambda x: "Positive" if x == "POS" else ("Negative" if x == "NEG" else "Neutral")
         # getting better emotion with higher confidence
         emotions = []
-        confidence = []
-        cnt_neg = cnt_pos = cnt_neu = 0
-        for i in range(length):
-            if vader_scores[i]['score'] > hugging_face_scores[i]['score']:  # check for higher confidence
-                confidence.append(vader_scores[i]['score'])
-                if vader_scores[i]['label'] == "POS":
-                    emotions.append("Positive")
-                    cnt_pos += 1
-                elif vader_scores[i]['label'] == "NEG":
-                    emotions.append("Negative")
-                    cnt_neg += 1
-                else:
-                    emotions.append("Neutral")
-                    cnt_neu += 1
+        for idx in self.data_frame.index:
+            if self.data_frame['vader_score'][idx]['score'] > self.data_frame['hugging-face_score'][idx]['score']:
+                emotions.append(abbr(self.data_frame['vader_score'][idx]['label']))
             else:
-                confidence.append(hugging_face_scores[i]['score'])
-                if hugging_face_scores[i]['label'] == "POS":
-                    emotions.append("Positive")
-                    cnt_pos += 1
-                elif hugging_face_scores[i]['label'] == "NEG":
-                    emotions.append("Negative")
-                    cnt_neg += 1
-                else:
-                    emotions.append("Neutral")
-                    cnt_neu += 1
+                emotions.append(abbr(self.data_frame['hugging-face_score'][idx]['label']))
 
-        emotion_count = {"Positive": cnt_pos, "Negative": cnt_neg, "Neutral": cnt_neu}
+        print("Comparison time: ", time.time() - t3)
         self.data_frame['emotion'] = emotions
-        self.data_frame['confidence'] = confidence
+        emotion_count = self.data_frame['emotion'].value_counts().to_dict()
+        try:
+            emotion_count['Negative']
+        except KeyError:
+            emotion_count['Negative'] = 0
+        try:
+            emotion_count['Positive']
+        except KeyError:
+            emotion_count['Positive'] = 0
         return self.data_frame, emotion_count
 
 

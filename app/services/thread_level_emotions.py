@@ -46,7 +46,7 @@ print("Preparing Emotion Detection Model...")
 model_obj = PrepareModel(data)  # initialize object of BuildModel
 
 print("Training of Model...")
-data = model_obj.predict_emotion()
+data = model_obj.predict_emotion
 
 # print value counts of each labels
 print(data['emotion'].value_counts())
