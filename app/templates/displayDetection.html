@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}
+Conversation & Distribution
+{% endblock %}
+
+{% block style %}
+    .header{
+        background-color : #212121;
+        height : 3%;
+        width : 100%;
+        color : white;
+        font-size : 40px;
+        text-align : center;
+        padding : 1%;
+    }
+    .sub-header{
+        background-color : white;
+        height : 7%;
+        width : 100%;
+        color : #212121;
+        font-size : 17px;
+        padding : 1%;
+    }
+{% endblock %}
+
+{% block header %}
+<div class="header">
+    Conversation & Emotion Distribution
+    <div style="margin-top:1%; font-size:22px; margin-left:2%; float:left" >
+        <a class="text-light" href="{{ url_for('sentiment_analysis.get_data_route') }}">Back to HomePage!</a>
+    </div>
+    <div style="margin-top:1%; font-size:22px; margin-right:2%; float:right" >
+        <a class="text-light" href="{{ url_for('sentiment_analysis.fetch_data_route', time='15m') }}">Go to Dashboard!</a>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+    var pos_cnt = {{ emotion_cnt["Positive"] }}
+    var neg_cnt = {{ emotion_cnt["Negative"] }}
+    var neu_cnt = {{ emotion_cnt["Neutral"] }}
+    plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+    localStorage.setItem(0, "15Mins");
+
+    total_messages = pos_cnt + neg_cnt + neu_cnt
+    result = "Total Messages : ".concat(total_messages.toString(),", ", "Positive Messages : ",
+    pos_cnt.toString(), ", ", "Negative Messages : ", neg_cnt.toString(), ", ", "Neutral Messages : ", neu_cnt.toString())
+    document.getElementById("total-message").innerHTML = result
+
+    function plot_chart(pos_cnt, neg_cnt, neu_cnt, neu_bool){
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(draw_pie);
+
+        function draw_pie() {
+            var pie_data = new google.visualization.DataTable();
+            pie_data.addColumn('string', 'Emotion');
+            pie_data.addColumn('number', 'No. of Response');
+            if(neu_bool == 1){
+                pie_data.addRows([
+                ["Positive", pos_cnt],
+                ["Negative", neg_cnt],
+                ["Neutral", neu_cnt]]);
+            }
+            else{
+                pie_data.addRows([
+                ["Positive", pos_cnt],
+                ["Negative", neg_cnt]]);
+            }
+            var options = {
+              is3D: true,
+              fontSize: 17,
+           };
+            var chart = new google.visualization.PieChart(document.getElementById('pieChart_emotion'));
+            chart.draw(pie_data, options);
+        }
+    }
+
+    function state_changed(chkBox) {
+        if (chkBox.checked) {
+            plot_chart(pos_cnt, neg_cnt, neu_cnt, 1)
+        }
+        else {
+            plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+        }
+    }
+{% endblock %}
+
+{% block sub_header %}
+<div class="sub-header">
+    <p id="total-message" style="float:left;"> Total Messages </p>
+    <div style="float:right; margin-right:2%;">
+        <form method="POST">
+            <input type="checkbox" id="include_neutral" name="include_neutral" onchange="state_changed(this)" />
+            <label for="include_neutral" style="font-size:20px;">Include Neutral</label>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<a id="top"></a>
+<div style="margin:2%">
+    <div style="width:50%; float:left">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Message</th>
+                    <th scope="col">Emotion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for idx in range(message|length) %}
+                    <tr>
+                        {% if emotion[idx] == "Positive" %}
+                            <td style="color: blue;">{{ message[idx] }}</td>
+                            <td style="color: blue;">{{ emotion[idx] }}</td>
+                        {% elif emotion[idx] == "Negative" %}
+                            <td style="color: red;">{{ message[idx] }}</td>
+                            <td style="color: red;">{{ emotion[idx] }}</td>
+                        {% else %}
+                            <td style="color: #FF8C00;">{{ message[idx] }}</td>
+                            <td style="color: #FF8C00;">{{ emotion[idx] }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div style="display:inline-block; vertical-align:bottom; font-size:24px; margin-left:1%; margin-bottom:2%">
+            <a class="text-dark" href="#top">Back to Top!</a>
+        </div>
+    </div>
+    <div style="width:50%; float:right">
+        <div id="pieChart_emotion" style="margin-left:12%; width:700px; height:700px;"></div>
+    </div>
+</div>
+{% endblock %}

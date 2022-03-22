@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}
+Customer Satisfaction
+{% endblock %}
+
+{% block header %}
+<div class="header">
+    Customer Satisfaction
+    <div style="margin-top:1%; font-size:22px; margin-left:2%; float:left" >
+        <a class="text-light" href="{{ url_for('sentiment_analysis.get_data_route') }}">Back to HomePage!</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+    .header{
+        background-color : #212121;
+        height : 3%;
+        width : 100%;
+        color : white;
+        text-align : center;
+        font-size : 40px;
+        padding : 1%;
+    }
+    .sub-header{
+        background-color : white;
+        height : 7%;
+        width : 100%;
+        color : #212121;
+        font-size : 17px;
+        padding : 1%;
+    }
+    .content{
+        margin-top:3%;
+    }
+{% endblock %}
+
+{% block script %}
+    var pos_cnt = {{ emotion_cnt["Positive"] }}
+    var neg_cnt = {{ emotion_cnt["Negative"] }}
+    var neu_cnt = {{ emotion_cnt["Neutral"] }}
+    plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+
+    let get_selected = localStorage.getItem(0);
+    console.log(get_selected)
+    document.getElementById('timing').value = get_selected
+
+    total_messages = pos_cnt + neg_cnt + neu_cnt
+    result = "Total Messages : ".concat(total_messages.toString(),", ", "Positive Messages : ",
+    pos_cnt.toString(), ", ", "Negative Messages : ", neg_cnt.toString(), ", ", "Neutral Messages : ", neu_cnt.toString())
+    document.getElementById("total-message").innerHTML = result
+
+    function plot_chart(pos_cnt, neg_cnt, neu_cnt, neu_bool){
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(draw_pie);
+
+        function draw_pie() {
+            var pie_data = new google.visualization.DataTable();
+            pie_data.addColumn('string', 'Emotion');
+            pie_data.addColumn('number', 'No. of Response');
+            if(neu_bool == 1){
+                pie_data.addRows([
+                ["Positive", pos_cnt],
+                ["Negative", neg_cnt],
+                ["Neutral", neu_cnt]]);
+            }
+            else{
+                pie_data.addRows([
+                ["Positive", pos_cnt],
+                ["Negative", neg_cnt]]);
+            }
+            var options = {
+              is3D: true,
+              fontSize: 17,
+           };
+            var chart = new google.visualization.PieChart(document.getElementById('pieChart_emotion'));
+            chart.draw(pie_data, options);
+        }
+    }
+
+    function state_changed(chkBox) {
+        if (chkBox.checked) {
+            plot_chart(pos_cnt, neg_cnt, neu_cnt, 1)
+        }
+        else {
+            plot_chart(pos_cnt, neg_cnt, neu_cnt, 0)
+        }
+    }
+
+    function option_updated(){
+        var url = "/"
+        document.getElementById("timing").selectedIndex
+        if(document.getElementById("timing").options[0].selected == true){
+            url += "15m"
+            localStorage.setItem(0, "15Mins");
+        }
+        if(document.getElementById("timing").options[1].selected == true){
+            url += "30m"
+            localStorage.setItem(0, "30Mins");
+        }
+        if(document.getElementById("timing").options[2].selected == true){
+            url += "1h"
+            localStorage.setItem(0, "1Hr");
+        }
+        if(document.getElementById("timing").options[3].selected == true){
+            url += "3h"
+            localStorage.setItem(0, "3Hrs");
+        }
+        if(document.getElementById("timing").options[4].selected == true){
+            url += "6h"
+            localStorage.setItem(0, "6Hrs");
+        }
+        if(document.getElementById("timing").options[5].selected == true){
+            url += "12h"
+            localStorage.setItem(0, "12Hrs");
+        }
+        if(document.getElementById("timing").options[6].selected == true){
+            url += "24h"
+            localStorage.setItem(0, "24Hrs");
+        }
+        window.location.href = url
+}
+{% endblock %}
+
+{% block sub_header %}
+<div class="sub-header">
+    <div style="float:left; margin-left:2%"><p id="total-message"> Total Messages </p></div>
+    <div style="float:right; margin-right:2%;">
+        <form method="POST">
+            <input type="checkbox" id="include_neutral" name="include_neutral" onchange="state_changed(this)" />
+            <label for="include_neutral" style="font-size:20px;">Include Neutral</label>
+            <select name="timing" id="timing" style="padding:8px; font-size:20px; margin-top:3%; width:150px">
+            <option value="15Mins">15 Minutes</option>
+            <option value="30Mins">30 Minutes</option>
+            <option value="1Hr">1 Hour</option>
+            <option value="3Hrs">3 Hours</option>
+            <option value="6Hrs">6 Hours</option>
+            <option value="12Hrs">12 Hours</option>
+            <option value="24Hrs">24 Hours</option>
+        </select>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <button type="submit" class="btn btn-lg btn-dark" style="float:right; width:150px; margin-right:3%;"
+            onclick="option_updated()">Query</button>
+    <div id="pieChart_emotion" style="margin-left:27%; width:900px; height:900px;"></div>
+</div>
+{% endblock %}
