@@ -2,6 +2,7 @@ import json
 import pandas as pd
 from bs4 import BeautifulSoup  # for removing html contents
 import re
+from app.constant import REMOVE_UNWANTED_SYMBOLS, REMOVE_UNWANTED_SPACES
 
 
 class ETL:
@@ -39,8 +40,10 @@ class ETL:
         self.data_frame = dataframe
 
         # removing unwanted symbols or bullets
-        self.data_frame['message'] = self.data_frame['message'].apply(lambda x: re.sub('[^a-zA-Z0-9(+*) \n\.]', ' ', str(x)))
-        self.data_frame['message'] = self.data_frame['message'].apply(lambda x: re.sub("\s+", " ", str(x)))
+        self.data_frame['message'] = self.data_frame['message'].apply(
+            lambda x: re.sub(REMOVE_UNWANTED_SYMBOLS, ' ', str(x)))
+        self.data_frame['message'] = self.data_frame['message'].apply(
+            lambda x: re.sub(REMOVE_UNWANTED_SPACES, " ", str(x)))
         return self.data_frame
 
     def extract_customer_responses(self):

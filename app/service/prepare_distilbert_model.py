@@ -4,11 +4,12 @@ from keras import backend as K
 import tensorflow as tf
 import numpy as np
 from app.common.utils import MonoState
+from app import logger
 
 
 # load sentiment analysis model
 def load_model():
-    print("Loading Model")
+    logger.info("Loading Model")
     # init distilbert model
     distilbert_model = TFDistilBertModel.from_pretrained('distilbert-base-uncased')
 

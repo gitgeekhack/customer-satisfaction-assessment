@@ -1,6 +1,7 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from app.service.prepare_distilbert_model import SentimentPredictor
 import time
+from app import logger
 
 vader_obj = SentimentIntensityAnalyzer()  # init vader object
 distilbert_obj = SentimentPredictor()  # init distilbert predictor object
@@ -20,7 +21,7 @@ class EnsembleModel:
         self.data_frame['distilbert_confidence'] = distilbert_confidence
         self.data_frame['distilbert_labels'] = distilbert_labels
 
-        print("Predicting time : {}".format(time.time() - x))
+        logger.info("Predicting time : {}".format(time.time() - x))
 
         # converting abbreviations like 'Positive', 'Negative'
         abbr = lambda x: "Positive" if x == 0 else ("Negative" if x == 1 else "Neutral")

@@ -9,7 +9,9 @@ from app.config import CONFIG
 
 def create_app():
     app = web.Application(client_max_size=1024 * 1024 * 5)
-    jinja2_env = aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('app/templates/'))
+    aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('app/templates/'))
+    app['static_root_url'] = '/static'
+    app.router.add_static(app['static_root_url'], 'app/static/')
     config_name = os.getenv('ENVIRONMENT', 'Development')
     app.config = load_config(CONFIG[config_name])
     logger = get_logger()

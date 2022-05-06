@@ -6,7 +6,7 @@ from aiohttp import web
 from app.service.data_preparation import ETL
 from app.service.make_request import fetch_data_from_url
 from app.service.ensemble_model import EnsembleModel
-
+from app import logger
 
 class Index(web.View):  # class for Index route
     @aiohttp_jinja2.template("index.html")
@@ -36,7 +36,7 @@ class Dashboard(web.View):  # class for Dashboard route
     @aiohttp_jinja2.template("dashboard.html")
     async def get(self):  # get method for make requests and detect emotion
         fetched_data = fetch_data_from_url(self.request.match_info['time'])  # make request and fetched data from server
-        print(self.request.match_info['time'])
+        logger.info(self.request.match_info['time'])
         data = json.loads(fetched_data)  # converting fetched_data into json format
         etl_obj = ETL()
         data = etl_obj.extract_data(data)  # extract data from json format
