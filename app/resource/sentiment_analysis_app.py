@@ -1,67 +1,54 @@
+import aiohttp_jinja2
 import json
-from flask import render_template, request, Blueprint, flash, redirect
-from wtforms import Form, StringField, validators
-from wtforms.widgets import TextArea
+import pandas as pd
+from aiohttp import web
 
-from app.services.data_preparation import ETL
-from app.services.make_request import fetch_data_from_url
-from app.services.prepare_model import PrepareModel
-
-global data, is_dashboard  # for storing messages
-sentiment_analysis = Blueprint('sentiment_analysis', __name__)  # create a blueprint of an application
+from app.service.data_preparation import ETL
+from app.service.make_request import fetch_data_from_url
+from app.service.ensemble_model import EnsembleModel
 
 
-class GetData(Form):  # get data form for the textarea
-    txt_field = StringField("Data", [validators.DataRequired()], widget=TextArea())
+class Index(web.View):  # class for Index route
+    @aiohttp_jinja2.template("index.html")
+    async def get(self):  # get method to load the index.html
+        return {'response': ""}
+
+    @aiohttp_jinja2.template("index.html")
+    async def post(self):  # post method to gather form data and detect emtion
+        fetched_data = await self.request.post()  # fetched data from the textarea
+        lst_message = [fetched_data['txt_area']]  # preparing list of the fetched data
+        df = pd.DataFrame()
+        df['message'] = lst_message  # storing fetched data into 'message' column
+        etl_obj = ETL()  # create an object for ETL Process
+        data = etl_obj.transform_data(df)  # transformation data
+        model_obj = EnsembleModel(data)  # initialize object of EnsembleModel
+        data, emotion_count = model_obj.ensemble_predicted_emotion()  # predict emotions on the messages
+        message = data['message'].tolist()
+        emotion = data['final_result'].tolist()
+        context = {
+            'message': message,
+            'emotion': emotion,
+        }
+        return {'response': context}
 
 
-@sentiment_analysis.route("/", methods=['GET', 'POST'])  # index route
-def get_data_route():  # method for fetching data from the textarea
-    global data, is_dashboard
-    is_dashboard = False
-    form = GetData(request.form)
-    if request.method == 'POST' and form.validate():  # if data is valid then process further
-        data = form.txt_field.data  # fetching data from the textarea
-        try:
-            data = json.loads(data)
-            etl_obj = ETL()
-            data = etl_obj.extract_data(data)  # extract JSON data from the file.
-            data, length_of_message = etl_obj.extract_customer_responses()  # extract customer responses from the data
-            return render_template("loading.html", length=length_of_message)
-        except ValueError as e:
-            flash("Exception Occurred! Invalid data.", category='danger')
-    return render_template("getData.html", form=form)
-
-
-@sentiment_analysis.route("/<time>", methods=['GET', 'POST'])  # time route
-def fetch_data_route(time):
-    global data, is_dashboard
-    is_dashboard = True
-    fetched_data = fetch_data_from_url(time)  # fetched data from the server
-    try:
-        data = json.loads(fetched_data)
-        etl_obj = ETL()  # init object for ETL process
-        data = etl_obj.extract_data(data)  # extract JSON data from the file.
-        data, length_of_message = etl_obj.extract_customer_responses()  # extract customer responses from the data
-        return render_template("loading.html", length=length_of_message)
-    except ValueError as e:
-        flash("Exception Occurred! Invalid data.", category='danger')
-
-
-# perform emotion detection on the json data
-@sentiment_analysis.route("/processed_data", methods=['GET', 'POST'])
-def perform_operation():
-    global data
-    etl_obj = ETL()  # init object for ETL process
-    data = etl_obj.transform_data(data)  # transform data for our purpose
-    model_obj = PrepareModel(data)  # initialize object of PrepareModel
-    data, emotion_count = model_obj.predict_emotion()  # predict emotions on the messages
-    if emotion_count['Positive'] == 0 and emotion_count['Negative'] == 0:
-        flash("You only have an neutral messages!", category='danger')
-    if is_dashboard:
-        return render_template("dashboard.html", emotion_cnt=emotion_count)
-    else:
-        message = list(data['message'])
-        emotion = list(data['final_result'])
-        return render_template("displayDetection.html", message=message, emotion=emotion,
-                               emotion_cnt=emotion_count)
+class Dashboard(web.View):  # class for Dashboard route
+    @aiohttp_jinja2.template("dashboard.html")
+    async def get(self):  # get method for make requests and detect emotion
+        fetched_data = fetch_data_from_url(self.request.match_info['time'])  # make request and fetched data from server
+        print(self.request.match_info['time'])
+        data = json.loads(fetched_data)  # converting fetched_data into json format
+        etl_obj = ETL()
+        data = etl_obj.extract_data(data)  # extract data from json format
+        data = etl_obj.transform_data(data)  # transformation of extracted data
+        data = etl_obj.extract_customer_responses()  # extracting customer responses from the data
+        model_obj = EnsembleModel(data)  # initialize object of EnsembleModel
+        data, emotion_count = model_obj.ensemble_predicted_emotion()  # predict emotions on the messages
+        message = data['message'].tolist()
+        emotion = data['final_result'].tolist()
+        context = {
+            'message': message,
+            'emotion': emotion,
+            'emotion_count': emotion_count
+        }
+        return {'response': context}

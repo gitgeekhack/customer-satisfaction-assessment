@@ -1,5 +1,3 @@
-import os
-
 CONFIG = {
     "Production": "app.config.ProductionConfig",
     "Staging": "app.config.StagingConfig",
