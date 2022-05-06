@@ -17,20 +17,18 @@
 <body>
     <div class="container-fluid">
         <div class="header">
-            <a href="{{ url('index') }}">
-                <img src="{{ static('img/WOTNOT.png') }}" alt="wotnot_logo" width="4%" height="4%">
-            </a>
+            <img src="{{ static('img/WOTNOT.png') }}" alt="wotnot_logo" width="4%" height="4%" onclick="window.location.href='{{ url('index') }}';">
             <span style="font-weight:bold; opacity:0.8;">WOTNOT</span>
-                <button type="submit" id="btn_query" class="btn btn-primary" style="float:right; font-size:16px; width:120px; margin-right:2%;" onclick="get_selected_option_parameters()">Query</button>
-                <select name="timing" id="timing" style="padding:9px; font-size:16px; width:120px; margin-right:12px; float:right">
-                    <option value="15m">15 Minutes</option>
-                    <option value="30m">30 Minutes</option>
-                    <option value="1h">1 Hour</option>
-                    <option value="3h">3 Hours</option>
-                    <option value="6h">6 Hours</option>
-                    <option value="12h">12 Hours</option>
-                    <option value="24h">24 Hours</option>
-                </select>
+            <button type="submit" id="btn_query" class="btn btn-primary" style="float:right; font-size:16px; width:120px; margin-right:2%;" onclick="get_selected_option_parameters()">Query</button>
+            <select name="timing" id="timing" style="padding:9px; font-size:16px; width:120px; margin-right:12px; float:right">
+                <option value="15m">15 Minutes</option>
+                <option value="30m">30 Minutes</option>
+                <option value="1h">1 Hour</option>
+                <option value="3h">3 Hours</option>
+                <option value="6h">6 Hours</option>
+                <option value="12h">12 Hours</option>
+                <option value="24h">24 Hours</option>
+            </select>
         </div>
     </div>
     <div class="container-fluid shadow-sm p-3 mb-5 bg-white rounded">
