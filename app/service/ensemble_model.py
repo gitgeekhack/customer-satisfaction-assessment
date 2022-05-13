@@ -1,5 +1,6 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import numpy as np
+import pandas as pd
 import time
 from app import logger
 from transformers import pipeline
@@ -8,11 +9,13 @@ from app.constant import MODEL_PATH
 vader_obj = SentimentIntensityAnalyzer()  # init vader object
 roberta_model = pipeline('sentiment-analysis', model=MODEL_PATH)
 
-class EnsembleModel:
-    def __init__(self, dataframe):
-        self.data_frame = dataframe
 
-    def ensemble_predicted_emotion(self):
+class EnsembleModel:
+    def __init__(self):
+        self.data_frame = pd.DataFrame()
+
+    def ensemble_predicted_emotion(self, dataframe):
+        self.data_frame = dataframe
         x = time.time()
 
         # get "vader" library scores
@@ -27,9 +30,7 @@ class EnsembleModel:
         abbr = lambda x: "Positive" if x == "POS" else ("Negative" if x == "NEG" else "Neutral")
 
         # ensemble for getting better emotion with higher confidence
-        self.data_frame['final_result'] = self.data_frame.apply(lambda x: abbr(x['vader_score']['label'])
-        if x['vader_score']['score'] > x['roberta_results']['score']
-        else abbr(x['roberta_results']['label']), axis=1)
+        self.data_frame['final_result'] = self.data_frame.apply(lambda x: abbr(x['vader_score']['label']) if x['vader_score']['score'] > x['roberta_results']['score'] else abbr(x['roberta_results']['label']), axis=1)
 
         # creating by default keys and initialize with 0
         emotion_count = dict.fromkeys(['Positive', 'Negative', 'Neutral'], 0)

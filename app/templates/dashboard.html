@@ -47,22 +47,22 @@
                     <table class="table table-hover">
                         <thead class="table-primary">
                             <tr>
-                                <th scope="col">Text</th>
-                                <th scope="col">Emotion</th>
+                                <th scope="col">Thread ID</th>
+                                <th scope="col">Overall Emotion</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for idx in range(response['message']|length) %}
+                            {% for idx in range(response['overall_emotion_list']|length) %}
                                 <tr>
-                                    {% if response['emotion'][idx] == "Positive" %}
-                                        <td style="color: blue;">{{ response['message'][idx] }}</td>
-                                        <td style="color: blue;">{{ response['emotion'][idx] }}</td>
-                                    {% elif response['emotion'][idx] == "Negative" %}
-                                        <td style="color: red;">{{ response['message'][idx] }}</td>
-                                        <td style="color: red;">{{ response['emotion'][idx] }}</td>
+                                    {% if response['overall_emotion_list'][idx] == "Positive" %}
+                                        <td style="color: blue;">{{ response['thread_ids'][idx] }}</td>
+                                        <td style="color: blue;">{{ response['overall_emotion_list'][idx] }}</td>
+                                    {% elif response['overall_emotion_list'][idx] == "Negative" %}
+                                        <td style="color: red;">{{ response['thread_ids'][idx] }}</td>
+                                        <td style="color: red;">{{ response['overall_emotion_list'][idx] }}</td>
                                     {% else %}
-                                        <td style="color: #FF8C00;">{{ response['message'][idx] }}</td>
-                                        <td style="color: #FF8C00;">{{ response['emotion'][idx] }}</td>
+                                        <td style="color: #FF8C00;">{{ response['thread_ids'][idx] }}</td>
+                                        <td style="color: #FF8C00;">{{ response['overall_emotion_list'][idx] }}</td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}
@@ -74,17 +74,6 @@
                 </div>
             </div>
             <div class="col">
-                <div class="row">
-                    <h4 class="d-flex justify-content-center" style="font-weight:bold;">
-                        {% if response['predicted_overall_emotion'] == "Positive" %}
-                            <p style="color: blue;">Overall Emotion : {{ response['predicted_overall_emotion'] }}</p>
-                        {% elif response['predicted_overall_emotion'] == "Negative" %}
-                            <p style="color: red;">Overall Emotion : {{ response['predicted_overall_emotion'] }}</p>
-                        {% else %}
-                            <p style="color: #FF8C00;">Overall Emotion : {{ response['predicted_overall_emotion'] }}</p>
-                        {% endif %}
-                    </h4>
-                </div>
                 <div class="row">
                     <div class="col-lg-6" id="pieChart_emotion" style="margin-left:20%; width:600px; height:600px;"></div>
                 </div>
@@ -100,17 +89,15 @@
 </html>
 
 <script type="text/javascript">
-    var pos_cnt = {{ response['emotion_count']["Positive"] }}
-    var neg_cnt = {{ response['emotion_count']["Negative"] }}
-    var neu_cnt = {{ response['emotion_count']["Neutral"] }}
+    var pos_cnt = {{ response['emotion_count_threads']["Positive"] }}
+    var neg_cnt = {{ response['emotion_count_threads']["Negative"] }}
+    var neu_cnt = {{ response['emotion_count_threads']["Neutral"] }}
     plot_chart(pos_cnt, neg_cnt, neu_cnt)
 
     localStorage.setItem(1, "15m");
     let get_selected = localStorage.getItem(0);
     console.log(get_selected)
     document.getElementById('timing').value = get_selected
-
-    total_messages = pos_cnt + neg_cnt + neu_cnt
 
     function plot_chart(pos_cnt, neg_cnt, neu_cnt){
         google.charts.load('current', {'packages':['corechart']});

@@ -2,8 +2,8 @@ import pandas as pd
 
 
 class OverallEmotion:
-    def __init__(self, df):
-        self.data_frame = df
+    def __init__(self):
+        self.data_frame = pd.DataFrame()
 
     def prepare_adjacency_pair(self, dataframe):
         self.data_frame = dataframe
@@ -18,11 +18,16 @@ class OverallEmotion:
         adjacency_pair_df['message'] = adj_pairs
         return adjacency_pair_df
 
-    def perform_arithmetic_average(self, emotion_count, dataframe):
+    def perform_arithmetic_average(self, dataframe, emotion_count):
         self.data_frame = dataframe
+
         total_positive_sequence = 0  # total of positive sequence number
         total_negative_sequence = 0  # total of negative sequence number
         total_neutral_sequence = 0  # total of neutral sequence number
+
+        avg_positive = 0  # storing the average of the positive number
+        avg_negative = 0  # storing the average of the negative number
+        avg_neutral = 0  # storing the average of the neutral number
 
         # sum the sequence number according to the class labels
         for i in range(len(self.data_frame)):
@@ -33,20 +38,15 @@ class OverallEmotion:
             else:
                 total_neutral_sequence += self.data_frame['sequence_number'][i]
 
-        # if any labels class count has 0, then arithmetic average provides an ZeroDivision exception, Convert 0 into 1
-        if emotion_count['Positive'] == 0:
-            emotion_count['Positive'] = 1
-
-        if emotion_count['Negative'] == 0:
-            emotion_count['Negative'] = 1
-
-        if emotion_count['Neutral'] == 0:
-            emotion_count['Neutral'] = 1
-
         # perform arithmetic average
-        avg_positive = total_positive_sequence / emotion_count['Positive']
-        avg_negative = total_negative_sequence / emotion_count['Negative']
-        avg_neutral = total_neutral_sequence / emotion_count['Neutral']
+        if emotion_count['Positive'] != 0:
+            avg_positive = total_positive_sequence / emotion_count['Positive']
+
+        if emotion_count['Negative'] != 0:
+            avg_negative = total_negative_sequence / emotion_count['Negative']
+
+        if emotion_count['Neutral'] != 0:
+            avg_neutral = total_neutral_sequence / emotion_count['Neutral']
 
         # return label class, which has the highest average
         if (avg_positive > avg_negative) and (avg_positive > avg_neutral):

@@ -24,8 +24,8 @@ class Index(web.View):  # class for Index route
         lst_message = [cleaned_message]  # preparing list of the cleaned message
         df = pd.DataFrame()
         df['message'] = lst_message  # storing fetched data into 'message' column
-        model_obj = EnsembleModel(df)  # initialize object of EnsembleModel
-        predicted_data, emotion_count = model_obj.ensemble_predicted_emotion()  # predict emotions on the messages
+        model_obj = EnsembleModel()  # initialize object of EnsembleModel
+        predicted_data, emotion_count = model_obj.ensemble_predicted_emotion(df)  # predict emotions on the messages
         context = {
             'message': predicted_data['message'].tolist(),
             'emotion': predicted_data['final_result'].tolist(),
@@ -39,31 +39,7 @@ class Dashboard(web.View):  # class for Dashboard route
         fetched_data = fetch_data_from_url(self.request.match_info['time'])  # make request and fetched data from server
         logger.info(self.request.match_info['time'])
         json_data = json.loads(fetched_data)  # converting fetched_data into json format
-        etl_obj = ETL()
-        extracted_data = etl_obj.extract_data(json_data)  # extract data from json format
-        transformed_data = etl_obj.transform_data(extracted_data)  # transformation of extracted data
-        customers_responses = etl_obj.extract_customer_responses(transformed_data)
-        model_obj = EnsembleModel(customers_responses)  # initialize object of EnsembleModel
-        predicted_data, emotion_count = model_obj.ensemble_predicted_emotion()  # predict emotions on the messages
-        overall_emotion = OverallEmotion(predicted_data)  # create object of overall emotion class
-        # perform arithmetic average on the data
-        predicted_overall_emotion = overall_emotion.perform_arithmetic_average(emotion_count, predicted_data)
-        context = {
-            'message': predicted_data['message'].tolist(),
-            'emotion': predicted_data['final_result'].tolist(),
-            'emotion_count': emotion_count,
-            'predicted_overall_emotion': predicted_overall_emotion
-        }
-        return {'response': context}
 
-
-class MultipleThreads(web.View):  # class for Multiple Threads route
-    @aiohttp_jinja2.template("multiple_threads.html")
-    async def get(self):  # get method for make requests and detect emotion
-        fetched_data = fetch_data_from_url(self.request.match_info['time'])  # make request and fetched data from server
-        logger.info(self.request.match_info['time'])
-
-        json_data = json.loads(fetched_data)  # converting fetched_data into json format
         thread_ids = set()
         for item in json_data['hits']['hits']:  # iterate over the data list
             try:
@@ -74,26 +50,29 @@ class MultipleThreads(web.View):  # class for Multiple Threads route
         thread_ids = list(thread_ids)
 
         etl_obj = ETL()
-        overall_emotion_obj = OverallEmotion(json_data)
-        emotion_counts = []
+        overall_emotion_obj = OverallEmotion()
         overall_emotion_list = []
 
-        for i in range(3):
+        for i in range(len(thread_ids)):
             fetched_thread_data = fetch_data_using_thread_id(thread_ids[i])
             json_data = json.loads(fetched_thread_data)  # converting fetched_data into json format
             extracted_data = etl_obj.extract_data(json_data)  # extracted the json data
             transformed_data = etl_obj.transform_data(extracted_data)  # transformed the extracted data
             # prepare the adjacency pair of transformed data
             adjacency_pairs_data = overall_emotion_obj.prepare_adjacency_pair(transformed_data)
-            model_obj = EnsembleModel(adjacency_pairs_data)  # create model_obj
-            predicted_data, emotion_count = model_obj.ensemble_predicted_emotion()  # predict emotions on adjacency pair
-            # predict overall emotions by performing the arithmetic average
-            predicted_overall_emotion = overall_emotion_obj.perform_arithmetic_average(emotion_count, predicted_data)
-            emotion_counts.append(emotion_count)
-            overall_emotion_list.append(predicted_overall_emotion)
+            if len(adjacency_pairs_data) > 1:
+                model_obj = EnsembleModel()  # create model_obj
+                predicted_data, emotion_count = model_obj.ensemble_predicted_emotion(adjacency_pairs_data)
+                # predict overall emotions by performing the arithmetic average
+                predicted_overall_emotion = overall_emotion_obj.perform_arithmetic_average(predicted_data, emotion_count)
+                overall_emotion_list.append(predicted_overall_emotion)
 
+        emotion_count_threads = {"Positive": overall_emotion_list.count('Positive'),
+                                 "Negative": overall_emotion_list.count('Negative'),
+                                 "Neutral": overall_emotion_list.count('Neutral')}
         context = {
-            'emotion_counts': emotion_counts,
-            'overall_emotion_list': overall_emotion_list
+            'thread_ids': thread_ids,
+            'overall_emotion_list': overall_emotion_list,
+            'emotion_count_threads': emotion_count_threads
         }
         return {'response': context}
