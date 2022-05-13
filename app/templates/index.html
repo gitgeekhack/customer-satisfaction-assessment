@@ -20,6 +20,9 @@
             <img src="{{ static('img/WOTNOT.png') }}" alt="wotnot_logo" width="4%" height="4%" onclick="window.location.href='{{ url('index') }}';">
             <span style="font-weight:bold; opacity:0.8;">WOTNOT</span>
             <div style="font-size:22px; margin:1%; float:right" >
+                <button type="button" onclick="window.location.href='{{ url('multiple_threads', time='15m') }}';"
+                    id="btn_multiple_threads" class="btn btn-outline-primary">Multiple Threads</button>
+
                 <button type="button" onclick="window.location.href='{{ url('dashboard', time='15m') }}';"
                     id="btn_dashboard" class="btn btn-outline-primary">Dashboard</button>
             </div>

@@ -1,35 +1,35 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from app.service.prepare_distilbert_model import SentimentPredictor
+import numpy as np
 import time
 from app import logger
+from transformers import pipeline
+from app.constant import MODEL_PATH
 
 vader_obj = SentimentIntensityAnalyzer()  # init vader object
-distilbert_obj = SentimentPredictor()  # init distilbert predictor object
-
+roberta_model = pipeline('sentiment-analysis', model=MODEL_PATH)
 
 class EnsembleModel:
     def __init__(self, dataframe):
         self.data_frame = dataframe
 
     def ensemble_predicted_emotion(self):
+        x = time.time()
+
         # get "vader" library scores
         self.data_frame['vader_score'] = self.data_frame['message'].apply(lambda x: get_vader_scores(x))
 
-        x = time.time()
-        # get distilbert results
-        distilbert_confidence, distilbert_labels = distilbert_obj.predict(self.data_frame['message'].tolist())
-        self.data_frame['distilbert_confidence'] = distilbert_confidence
-        self.data_frame['distilbert_labels'] = distilbert_labels
+        # get "roberta" results
+        self.data_frame['roberta_results'] = roberta_model(self.data_frame['message'].tolist(), truncation=True)
 
         logger.info("Predicting time : {}".format(time.time() - x))
 
         # converting abbreviations like 'Positive', 'Negative'
-        abbr = lambda x: "Positive" if x == 0 else ("Negative" if x == 1 else "Neutral")
+        abbr = lambda x: "Positive" if x == "POS" else ("Negative" if x == "NEG" else "Neutral")
 
         # ensemble for getting better emotion with higher confidence
         self.data_frame['final_result'] = self.data_frame.apply(lambda x: abbr(x['vader_score']['label'])
-        if x['vader_score']['score'] > x['distilbert_confidence']
-        else abbr(x['distilbert_labels']), axis=1)
+        if x['vader_score']['score'] > x['roberta_results']['score']
+        else abbr(x['roberta_results']['label']), axis=1)
 
         # creating by default keys and initialize with 0
         emotion_count = dict.fromkeys(['Positive', 'Negative', 'Neutral'], 0)
@@ -41,6 +41,7 @@ class EnsembleModel:
         for key in result_count.keys():
             emotion_count[key] = result_count[key]
 
+        self.data_frame['sequence_number'] = np.arange(1, len(self.data_frame) + 1)
         return self.data_frame, emotion_count
 
 
@@ -50,11 +51,11 @@ def get_vader_scores(sentence):
 
     if sentiment_dict['compound'] >= 0.05:
         confidence = sentiment_dict['pos']
-        emotion_dict = {'label': 0, 'score': confidence}
+        emotion_dict = {'label': "POS", 'score': confidence}
     elif sentiment_dict['compound'] <= -0.05:
         confidence = sentiment_dict['neg']
-        emotion_dict = {'label': 1, 'score': confidence}
+        emotion_dict = {'label': "NEG", 'score': confidence}
     else:
         confidence = sentiment_dict['neu']
-        emotion_dict = {'label': 2, 'score': confidence}
+        emotion_dict = {'label': "NEU", 'score': confidence}
     return emotion_dict

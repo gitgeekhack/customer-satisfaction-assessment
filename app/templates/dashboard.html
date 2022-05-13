@@ -76,7 +76,13 @@
             <div class="col">
                 <div class="row">
                     <h4 class="d-flex justify-content-center" style="font-weight:bold;">
-                        Overall Emotion : Positive
+                        {% if response['predicted_overall_emotion'] == "Positive" %}
+                            <p style="color: blue;">Overall Emotion : {{ response['predicted_overall_emotion'] }}</p>
+                        {% elif response['predicted_overall_emotion'] == "Negative" %}
+                            <p style="color: red;">Overall Emotion : {{ response['predicted_overall_emotion'] }}</p>
+                        {% else %}
+                            <p style="color: #FF8C00;">Overall Emotion : {{ response['predicted_overall_emotion'] }}</p>
+                        {% endif %}
                     </h4>
                 </div>
                 <div class="row">
@@ -99,6 +105,7 @@
     var neu_cnt = {{ response['emotion_count']["Neutral"] }}
     plot_chart(pos_cnt, neg_cnt, neu_cnt)
 
+    localStorage.setItem(1, "15m");
     let get_selected = localStorage.getItem(0);
     console.log(get_selected)
     document.getElementById('timing').value = get_selected

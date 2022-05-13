@@ -13,7 +13,14 @@ class ETL:
     def extract_data(self, data):
         extracted_list = []  # contains extracted attributes
         agent = ""
+        thread_id = ""
         for item in data["hits"]["hits"]:
+            try:
+                thread_id = item['_source']['thread_id']  # extract thread_id feature
+            except KeyError:
+                pass
+
+            created_at = item['_source']['created_at']  # extract created_at feature
             try:
                 if item["_source"]["created_by"] is None:
                     agent = "Customer"
@@ -29,15 +36,16 @@ class ETL:
             except KeyError:
                 msg = None
 
-            extracted_list.append([agent, msg])  # appending all attributes in list
-        self.data_frame = pd.DataFrame(extracted_list, columns=["created_by", "message"])
+            extracted_list.append([thread_id, created_at, agent, msg])  # appending all attributes in list
+        self.data_frame = pd.DataFrame(extracted_list, columns=["thread_id", "created_at", "created_by", "message"])
         return self.data_frame
 
     def transform_data(self, dataframe):
-        dataframe.dropna(inplace=True)  # dropping null values
-        dataframe = dataframe.reset_index()  # reset_index of dataframe
-        dataframe = dataframe.iloc[:, 1:]  # removing index
-        self.data_frame = dataframe
+        sorted_df = dataframe.sort_values(by=['thread_id', 'created_at'], ascending=[True, True])
+        sorted_df.dropna(inplace=True)  # dropping null values
+        sorted_df = sorted_df.reset_index()  # reset_index of dataframe
+        sorted_df = sorted_df.iloc[:, 1:]  # removing index
+        self.data_frame = sorted_df
 
         # removing unwanted symbols or bullets
         self.data_frame['message'] = self.data_frame['message'].apply(
@@ -46,7 +54,8 @@ class ETL:
             lambda x: re.sub(REMOVE_UNWANTED_SPACES, " ", str(x)))
         return self.data_frame
 
-    def extract_customer_responses(self):
+    def extract_customer_responses(self, dataframe):
+        self.data_frame = dataframe
         self.data_frame.dropna(inplace=True)  # drop rows that have null values
         self.data_frame = self.data_frame.reset_index()  # reset the index for the dataframe
         self.data_frame = self.data_frame.iloc[:, 1:]  # removing index column
